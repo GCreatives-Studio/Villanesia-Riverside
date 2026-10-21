@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -42,7 +41,7 @@
       overflow-x: hidden;
     }
 
-    /* Header Simpel & Rapi */
+    /* Header Simpel */
     header {
       position: fixed;
       top: 0;
@@ -371,47 +370,31 @@
       transform: translateY(-5px);
     }
 
-    /* GALERI FOTO GRID VILLA */
+    /* Gallery Grid */
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 1.5rem;
     }
 
     .gallery-item {
       position: relative;
-      border-radius: 16px;
+      border-radius: 15px;
       overflow: hidden;
-      height: 260px;
+      height: 250px;
       box-shadow: var(--shadow);
       background: #eae3d5;
-      cursor: pointer;
     }
 
     .gallery-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
+      transition: var(--transition);
     }
 
     .gallery-item:hover img {
       transform: scale(1.08);
-    }
-
-    .gallery-caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 1.2rem 1rem 0.8rem;
-      background: linear-gradient(to top, rgba(44, 26, 23, 0.85), transparent);
-      color: var(--white);
-      font-size: 0.9rem;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
 
     /* Order Form WA */
@@ -507,15 +490,15 @@
       text-align: center;
     }
 
-    /* Modal Setting Admin */
+    /* Modal Setting */
     .modal-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.65);
-      backdrop-filter: blur(6px);
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(5px);
       z-index: 3000;
       display: none;
       align-items: center;
@@ -531,24 +514,14 @@
       background: var(--bg-krem);
       border-radius: 20px;
       width: 100%;
-      max-width: 650px;
-      max-height: 88vh;
+      max-width: 550px;
+      max-height: 90vh;
       overflow-y: auto;
       padding: 2rem;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-    }
-
-    .modal-section-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--hijau-forest);
-      border-bottom: 2px solid var(--gold);
-      padding-bottom: 6px;
-      margin: 1.5rem 0 1rem;
     }
 
     .input-group {
-      margin-bottom: 1.1rem;
+      margin-bottom: 1.2rem;
     }
 
     .input-group label {
@@ -569,79 +542,68 @@
     .upload-box {
       background: var(--krem-card);
       border: 2px dashed var(--gold);
-      padding: 0.9rem;
-      border-radius: 10px;
+      padding: 0.8rem;
+      border-radius: 8px;
       text-align: center;
       cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .upload-box:hover {
-      background: #EAE3D5;
+      margin-top: 5px;
     }
 
     .upload-box input[type="file"] {
       display: none;
     }
 
-    .upload-preview {
-      width: 100%;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-top: 8px;
-    }
-
-    /* Admin Gallery Manager List */
-    .admin-gallery-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .admin-gallery-item {
+    .gallery-manage-item {
       display: flex;
       align-items: center;
-      gap: 12px;
-      background: var(--white);
-      padding: 0.8rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      border: 1px solid rgba(0,0,0,0.08);
+      gap: 10px;
+      background: var(--krem-card);
+      padding: 8px;
+      border-radius: 8px;
+      margin-bottom: 8px;
     }
 
-    .admin-gallery-item img {
-      width: 70px;
-      height: 60px;
+    .gallery-manage-item img {
+      width: 50px;
+      height: 50px;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 4px;
     }
 
-    .admin-gallery-info {
-      flex: 1;
-    }
-
-    .btn-danger {
-      background: #D90429;
+    /* Floating Buttons (Audio Kiri - WA Kanan) */
+    .floating-audio-btn {
+      position: fixed;
+      bottom: 25px;
+      left: 25px;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background-color: var(--hijau-forest);
       color: white;
-      border: none;
-      padding: 0.5rem 0.8rem;
-      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+      z-index: 999;
       cursor: pointer;
-      font-size: 0.8rem;
+      border: 2px solid var(--gold);
+      transition: var(--transition);
     }
 
-    /* Floating WA */
+    .floating-audio-btn:hover {
+      transform: scale(1.1);
+    }
+
     .floating-wa {
       position: fixed;
       bottom: 25px;
       right: 25px;
-      background-color: #25D366;
-      color: white;
       width: 55px;
       height: 55px;
       border-radius: 50%;
+      background-color: #25D366;
+      color: white;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -649,6 +611,11 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
       z-index: 999;
       cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .floating-wa:hover {
+      transform: scale(1.1);
     }
 
     .admin-only {
@@ -701,7 +668,7 @@
       <ul class="drawer-links">
         <li><a href="#about" onclick="toggleDrawer()">Tentang Villa</a></li>
         <li><a href="#suitability" onclick="toggleDrawer()">Kegiatan & Acara</a></li>
-        <li><a href="#gallery" onclick="toggleDrawer()">Galeri Foto Villa</a></li>
+        <li><a href="#gallery" onclick="toggleDrawer()">Galeri Foto</a></li>
         <li><a href="#booking" onclick="toggleDrawer()">Form Pemesanan</a></li>
         <li><a href="#blog" onclick="toggleDrawer()">Artikel Blog</a></li>
         <li><a href="#location" onclick="toggleDrawer()">Lokasi Maps</a></li>
@@ -709,13 +676,13 @@
     </div>
 
     <div class="drawer-footer">
-      <button class="btn-primary" style="width:100%; justify-content:center;" onclick="directWA('Halo Ivan, saya ingin tanya sewa Villanesia Riverside.')">
+      <button class="btn-primary" style="width:100%; justify-content:center;" onclick="directWA('Halo, saya ingin bertanya tentang sewa Villanesia Riverside.')">
         <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
       </button>
       
       <!-- Tombol Admin Setting -->
       <button class="btn-outline admin-only" style="width:100%; justify-content:center; color:var(--cokelat-tua); border-color:var(--cokelat-tua);" onclick="toggleDrawer(); openModal();">
-        <i class="fa-solid fa-gear"></i> Pengaturan Web (Admin)
+        <i class="fa-solid fa-gear"></i> Pengaturan Web
       </button>
     </div>
   </div>
@@ -730,7 +697,7 @@
       <p>Persewaan villa eksklusif bernuansa asri dan tenang. Tempat ideal untuk mengukir kenangan bersama keluarga besar, retret sekolah, gathering instansi, maupun acara komunitas.</p>
       
       <div class="hero-btns">
-        <button class="btn-primary" onclick="directWA('Halo Ivan, saya ingin reservasi/info harga Villanesia Riverside.')">
+        <button class="btn-primary" onclick="directWA('Halo, saya ingin reservasi / info harga Villanesia Riverside.')">
           <i class="fa-brands fa-whatsapp"></i> Reservasi WhatsApp
         </button>
         <button class="btn-outline" onclick="directMaps()">
@@ -784,15 +751,15 @@
     </div>
   </section>
 
-  <!-- GALERI FOTO SECTION (LENGKAP) -->
+  <!-- Gallery Section -->
   <section id="gallery">
     <div class="container">
       <div class="section-title">
         <h2>Galeri Foto Villa</h2>
-        <p>Dokumentasi keindahan alam, arsitektur, dan fasilitas eksklusif kami</p>
+        <p>Potret keindahan arsitektur, fasilitas, dan pemandangan riverside</p>
       </div>
       <div class="gallery-grid" id="galleryContainer">
-        <!-- Rendered Dynamically via JS -->
+        <!-- Rendered dynamically -->
       </div>
     </div>
   </section>
@@ -893,83 +860,86 @@
       <!-- Option Admin Setting -->
       <div class="admin-only" style="justify-content: center; margin-top: 15px;">
         <button onclick="openModal()" style="background:none; border:none; color:var(--gold); cursor:pointer; font-size:0.85rem; text-decoration:underline;">
-          <i class="fa-solid fa-gear"></i> Menu Admin / Setting Galeri
+          <i class="fa-solid fa-gear"></i> Menu Admin / Setting
         </button>
       </div>
     </div>
   </footer>
 
-  <!-- Floating WhatsApp -->
-  <a class="floating-wa" onclick="directWA('Halo Ivan, saya ingin bertanya tentang Villanesia Riverside.')">
+  <!-- Floating Audio (Suara Alam) Button (Kiri) -->
+  <button class="floating-audio-btn" id="audioToggleBtn" onclick="toggleAudio()" title="Putar / Mute Suara Hutan & Sungai Asri">
+    <i class="fa-solid fa-volume-xmark" id="audioIcon"></i>
+  </button>
+
+  <!-- Floating WhatsApp Button (Kanan) -->
+  <a class="floating-wa" onclick="directWA('Halo, saya ingin bertanya tentang Villanesia Riverside.')" title="Chat WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <!-- MODAL SETTINGS ADMIN (PENUH FITUR GALERI EDITOR) -->
+  <!-- Modal Settings Admin -->
   <div class="modal-overlay" id="settingModal">
     <div class="modal-card">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
-        <h3 style="color:var(--cokelat-tua);"><i class="fa-solid fa-sliders"></i> Pengaturan Web & Galeri Foto</h3>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+        <h3 style="color:var(--cokelat-tua);"><i class="fa-solid fa-sliders"></i> Pengaturan Web Admin</h3>
         <button onclick="closeModal()" style="background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
       </div>
 
-      <!-- General Config -->
-      <div class="modal-section-title"><i class="fa-solid fa-info-circle"></i> Informasi & Status Villa</div>
       <div class="input-group">
-        <label>Status Operasional Villa</label>
+        <label>Status Villa</label>
         <select id="cfgStatus">
-          <option value="COMING_SOON">COMING SOON - SEGERA HADIR</option>
-          <option value="READY">SUDAH BUKA - READY FOR BOOKING</option>
+          <option value="COMING_SOON">Coming Soon</option>
+          <option value="READY">Sudah Buka / Ready</option>
         </select>
       </div>
 
       <div class="input-group">
-        <label>Nama Marketing</label>
+        <label>Nama Marketing (Otomatis mengubah sapaan WA)</label>
         <input type="text" id="cfgName" value="Ivan Nolan">
       </div>
 
       <div class="input-group">
-        <label>Nomor WhatsApp WhatsApp (+62...)</label>
+        <label>Nomor WhatsApp (+62...)</label>
         <input type="text" id="cfgPhone" value="+62 822-1155-9404">
       </div>
 
-      <!-- Hero Photo -->
-      <div class="modal-section-title"><i class="fa-solid fa-image"></i> Foto Utama (Hero Background)</div>
       <div class="input-group">
+        <label>Email Kontak</label>
+        <input type="email" id="cfgEmail" value="info@villanesia.com">
+      </div>
+
+      <!-- Upload Foto Background Hero -->
+      <div class="input-group">
+        <label>Upload Foto Main Background Hero (Auto Compress)</label>
         <div class="upload-box" onclick="document.getElementById('heroFileInput').click()">
           <i class="fa-solid fa-cloud-arrow-up" style="font-size:1.3rem; color:var(--gold);"></i>
-          <p style="font-size:0.85rem; color:var(--text-muted); margin-top:4px;">Klik untuk Unggah Foto Hero Baru (dari HP/PC)</p>
+          <p style="font-size:0.8rem; color:var(--text-muted);">Klik untuk ganti foto utama Hero</p>
           <input type="file" id="heroFileInput" accept="image/*" onchange="handleHeroUpload(event)">
         </div>
-        <img id="heroPreview" class="upload-preview" style="display:none;" alt="Preview Hero">
       </div>
 
-      <!-- GALERI MANAGER PERFORMA LENGKAP -->
-      <div class="modal-section-title" style="display:flex; justify-content:space-between; align-items:center;">
-        <span><i class="fa-solid fa-images"></i> Manajemen Galeri Foto Villa</span>
-        <button class="btn-primary" style="padding:0.4rem 0.8rem; font-size:0.75rem;" onclick="addNewGalleryItem()">
-          <i class="fa-solid fa-plus"></i> Tambah Foto
+      <!-- Manager Galeri Foto -->
+      <div class="input-group">
+        <label>Kelola Galeri Foto Villa</label>
+        <div id="galleryManageList" style="max-height: 180px; overflow-y: auto; margin-bottom: 8px;"></div>
+        <button class="btn-outline" style="width:100%; justify-content:center; color:var(--hijau-forest); border-color:var(--hijau-forest); font-size:0.85rem; padding:0.5rem;" onclick="document.getElementById('newGalleryInput').click()">
+          <i class="fa-solid fa-plus"></i> Tambah Foto Baru ke Galeri
         </button>
+        <input type="file" id="newGalleryInput" accept="image/*" style="display:none;" onchange="addNewGalleryImage(event)">
       </div>
 
-      <div class="admin-gallery-list" id="adminGalleryList">
-        <!-- Rendered dynamically -->
-      </div>
-
-      <!-- Actions -->
-      <button class="btn-primary" style="width:100%; justify-content:center; margin-bottom: 10px; padding: 0.9rem;" onclick="saveSettings()">
-        <i class="fa-solid fa-floppy-disk"></i> Simpan Semua Perubahan
+      <button class="btn-primary" style="width:100%; justify-content:center; margin-bottom: 10px;" onclick="saveSettings()">
+        <i class="fa-solid fa-floppy-disk"></i> Simpan Perubahan
       </button>
 
+      <!-- Button Link Klien -->
       <button class="btn-outline" style="width:100%; justify-content:center; color:var(--cokelat-tua); border-color:var(--cokelat-tua);" onclick="copyClientLink()">
-        <i class="fa-solid fa-link"></i> Salin Link Khusus Klien (Tanpa Tombol Admin)
+        <i class="fa-solid fa-link"></i> Salin Link Khusus Klien (Tanpa Setting)
       </button>
     </div>
   </div>
 
   <script>
     const MAPS_URL = "https://maps.app.goo.gl/ySFqTtAbkvroezxZ6";
-    
-    // Default App Data
     let appConfig = {
       status: "COMING_SOON",
       name: "Ivan Nolan",
@@ -977,25 +947,92 @@
       email: "info@villanesia.com",
       heroImg: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80",
       gallery: [
-        {
-          title: "Area Kolam Renang & Taman",
-          url: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"
-        },
-        {
-          title: "Pemandangan Tepi Sungai",
-          url: "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80"
-        },
-        {
-          title: "Kamar Utama Nyaman & Mewah",
-          url: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80"
-        },
-        {
-          title: "Ruang Kumpul Keluarga Luas",
-          url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
-        }
+        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80"
       ]
     };
 
+    // ==========================================
+    // AUDIO AMBIENCE (SUARA RIVER & FOREST)
+    // ==========================================
+    let audioCtx = null;
+    let isAudioPlaying = false;
+    let noiseNode = null;
+
+    function toggleAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+
+      const icon = document.getElementById('audioIcon');
+      const btn = document.getElementById('audioToggleBtn');
+
+      if (!isAudioPlaying) {
+        startForestAmbience();
+        isAudioPlaying = true;
+        icon.className = "fa-solid fa-volume-high";
+        btn.style.backgroundColor = "#2D6A4F";
+      } else {
+        stopForestAmbience();
+        isAudioPlaying = false;
+        icon.className = "fa-solid fa-volume-xmark";
+        btn.style.backgroundColor = "var(--hijau-forest)";
+      }
+    }
+
+    function startForestAmbience() {
+      // Menghasilkan deru air sungai jernih
+      const bufferSize = audioCtx.sampleRate * 2;
+      const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+      const data = buffer.getChannelData(0);
+      let b0 = 0, b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0, b6 = 0;
+      
+      for (let i = 0; i < bufferSize; i++) {
+        const white = Math.random() * 2 - 1;
+        b0 = 0.99886 * b0 + white * 0.0555179;
+        b1 = 0.99332 * b1 + white * 0.0750759;
+        b2 = 0.96900 * b2 + white * 0.1538520;
+        b3 = 0.86650 * b3 + white * 0.3104856;
+        b4 = 0.55000 * b4 + white * 0.5329522;
+        b5 = -0.7616 * b5 - white * 0.0168980;
+        data[i] = b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362;
+        data[i] *= 0.035; // Suara air sungai yang lembut
+        b6 = white * 0.115926;
+      }
+
+      noiseNode = audioCtx.createBufferSource();
+      noiseNode.buffer = buffer;
+      noiseNode.loop = true;
+
+      const filter = audioCtx.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.value = 500;
+
+      const gainNode = audioCtx.createGain();
+      gainNode.gain.value = 0.3;
+
+      noiseNode.connect(filter);
+      filter.connect(gainNode);
+      gainNode.connect(audioCtx.destination);
+      noiseNode.start();
+    }
+
+    function stopForestAmbience() {
+      if (noiseNode) {
+        noiseNode.stop();
+        noiseNode.disconnect();
+        noiseNode = null;
+      }
+    }
+
+    // ==========================================
+    // INTEGRASI SISTEM & DINAMIS MARKETING
+    // ==========================================
     function checkClientMode() {
       const urlParams = new URLSearchParams(window.location.search);
       if (urlParams.get('mode') === 'client') {
@@ -1003,9 +1040,11 @@
       }
     }
 
-    function directWA(message) {
+    // Direct WA dengan Nama Marketing Dinamis
+    function directWA(customMessage) {
       const cleanPhone = appConfig.phone.replace(/[^0-9]/g, '');
-      const encodedMsg = encodeURIComponent(message);
+      const fullText = `Halo ${appConfig.name}, ` + customMessage.replace(/^Halo,\s*/i, '');
+      const encodedMsg = encodeURIComponent(fullText);
       const waUrl = `https://api.whatsapp.com/send?phone=${cleanPhone}&text=${encodedMsg}`;
 
       try {
@@ -1034,14 +1073,9 @@
       document.getElementById('cfgStatus').value = appConfig.status;
       document.getElementById('cfgName').value = appConfig.name;
       document.getElementById('cfgPhone').value = appConfig.phone;
+      document.getElementById('cfgEmail').value = appConfig.email;
       
-      if(appConfig.heroImg) {
-        const prev = document.getElementById('heroPreview');
-        prev.src = appConfig.heroImg;
-        prev.style.display = 'block';
-      }
-
-      renderAdminGalleryList();
+      renderGalleryManageList();
       document.getElementById('settingModal').classList.add('active');
     }
 
@@ -1049,67 +1083,30 @@
       document.getElementById('settingModal').classList.remove('active');
     }
 
-    /* RENDER DYNAMIC ADMIN GALLERY LIST */
-    function renderAdminGalleryList() {
-      const container = document.getElementById('adminGalleryList');
-      if (!appConfig.gallery || appConfig.gallery.length === 0) {
-        container.innerHTML = `<p style="font-size:0.85rem; color:var(--text-muted); text-align:center;">Belum ada foto galeri. Klik 'Tambah Foto' di atas.</p>`;
-        return;
-      }
-
+    function renderGalleryManageList() {
+      const listEl = document.getElementById('galleryManageList');
       let html = '';
-      appConfig.gallery.forEach((item, index) => {
+      appConfig.gallery.forEach((url, index) => {
         html += `
-          <div class="admin-gallery-item">
-            <img src="${item.url}" alt="Foto ${index + 1}" onerror="this.src='https://placehold.co/100x80/2C1A17/FFFFFF?text=Foto'">
-            <div class="admin-gallery-info">
-              <input type="text" value="${item.title || ''}" placeholder="Judul/Keterangan Foto" 
-                onchange="updateGalleryTitle(${index}, this.value)" style="width:100%; padding:4px 8px; font-size:0.8rem; margin-bottom:4px; border:1px solid #ccc; border-radius:4px;">
-              <div style="display:flex; gap:6px;">
-                <button style="background:var(--hijau-forest); color:white; border:none; padding:3px 8px; border-radius:4px; font-size:0.7rem; cursor:pointer;" onclick="triggerGalleryUpload(${index})">
-                  <i class="fa-solid fa-upload"></i> Unggah Foto
-                </button>
-                <input type="file" id="galInput_${index}" accept="image/*" style="display:none;" onchange="handleGalleryUpload(event, ${index})">
-              </div>
-            </div>
-            <button class="btn-danger" onclick="deleteGalleryItem(${index})"><i class="fa-solid fa-trash"></i></button>
+          <div class="gallery-manage-item">
+            <img src="${url}" alt="Galeri ${index+1}">
+            <div style="flex-grow:1; font-size:0.8rem; font-weight:600;">Foto #${index+1}</div>
+            <button type="button" onclick="removeGalleryImage(${index})" style="background:#ff4d4d; color:white; border:none; padding:5px 10px; border-radius:5px; cursor:pointer; font-size:0.75rem;">
+              <i class="fa-solid fa-trash"></i> Hapus
+            </button>
           </div>
         `;
       });
-      container.innerHTML = html;
+      listEl.innerHTML = html;
     }
 
-    function updateGalleryTitle(index, val) {
-      appConfig.gallery[index].title = val;
-    }
-
-    function addNewGalleryItem() {
-      appConfig.gallery.push({
-        title: "Pemandangan Villanesia",
-        url: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80"
-      });
-      renderAdminGalleryList();
-    }
-
-    function deleteGalleryItem(index) {
-      if(confirm('Hapus foto ini dari galeri?')) {
-        appConfig.gallery.splice(index, 1);
-        renderAdminGalleryList();
-      }
-    }
-
-    function triggerGalleryUpload(index) {
-      document.getElementById(`galInput_${index}`).click();
-    }
-
-    // Auto Compress & Convert Canvas untuk Foto Besarkan apapun
     function compressImage(file, callback) {
       const reader = new FileReader();
       reader.onload = function(e) {
         const img = new Image();
         img.onload = function() {
           const canvas = document.createElement('canvas');
-          const MAX_WIDTH = 1200;
+          const MAX_WIDTH = 1280; 
           let width = img.width;
           let height = img.height;
 
@@ -1131,41 +1128,50 @@
       reader.readAsDataURL(file);
     }
 
-    function handleHeroUpload(e) {
-      const file = e.target.files[0];
+    function handleHeroUpload(event) {
+      const file = event.target.files[0];
       if (!file) return;
-      compressImage(file, function(base64) {
+      compressImage(file, (base64) => {
         appConfig.heroImg = base64;
-        const prev = document.getElementById('heroPreview');
-        prev.src = base64;
-        prev.style.display = 'block';
+        alert('Foto Hero berhasil disiapkan! Klik "Simpan Perubahan".');
       });
     }
 
-    function handleGalleryUpload(e, index) {
-      const file = e.target.files[0];
+    function addNewGalleryImage(event) {
+      const file = event.target.files[0];
       if (!file) return;
-      compressImage(file, function(base64) {
-        appConfig.gallery[index].url = base64;
-        renderAdminGalleryList();
+      compressImage(file, (base64) => {
+        appConfig.gallery.push(base64);
+        renderGalleryManageList();
+        alert('Foto baru berhasil ditambahkan ke galeri!');
       });
+    }
+
+    function removeGalleryImage(index) {
+      if (appConfig.gallery.length <= 1) {
+        alert('Galeri minimal harus menyisakan 1 foto.');
+        return;
+      }
+      appConfig.gallery.splice(index, 1);
+      renderGalleryManageList();
     }
 
     function saveSettings() {
       appConfig.status = document.getElementById('cfgStatus').value;
       appConfig.name = document.getElementById('cfgName').value;
       appConfig.phone = document.getElementById('cfgPhone').value;
+      appConfig.email = document.getElementById('cfgEmail').value;
 
       localStorage.setItem('villanesia_cfg', JSON.stringify(appConfig));
       renderUI();
       closeModal();
-      alert('Pengaturan dan Galeri Foto berhasil diperbarui!');
+      alert(`Pengaturan disukai!\nNama marketing diset ke: ${appConfig.name}`);
     }
 
     function copyClientLink() {
       const clientUrl = window.location.origin + window.location.pathname + '?mode=client';
       navigator.clipboard.writeText(clientUrl).then(() => {
-        alert('Link Khusus Klien berhasil disalin!\n\nURL: ' + clientUrl + '\n\n(Menu pengaturan admin akan otomatis disembunyikan saat disebar ke klien).');
+        alert('Link Khusus Klien berhasil disalin!\n\nURL: ' + clientUrl + '\n\n(Link ini tidak menampilkan menu Pengaturan Admin).');
       });
     }
 
@@ -1176,7 +1182,7 @@
       const tanggal = document.getElementById('formTanggal').value;
       const peserta = document.getElementById('formPeserta').value;
 
-      const message = `Halo ${appConfig.name}, saya ingin booking/reservasi Villanesia Riverside:\n\n` +
+      const message = `saya ingin booking/reservasi Villanesia Riverside:\n\n` +
                       `• Nama: ${nama}\n` +
                       `• Jenis Acara: ${acara}\n` +
                       `• Tanggal Sewa: ${tanggal}\n` +
@@ -1199,7 +1205,7 @@
       if (appConfig.status === 'COMING_SOON') {
         badgeContainer.innerHTML = `<span class="badge-status"><i class="fa-solid fa-clock"></i> COMING SOON - SEGERA HADIR</span>`;
       } else {
-        badgeContainer.innerHTML = `<span class="badge-status" style="background:rgba(45,106,79,0.3); border-color:#52B788;"><i class="fa-solid fa-circle-check"></i> SUDAH BUKA - READY FOR BOOKING</span>`;
+        badgeContainer.innerHTML = `<span class="badge-status" style="background:rgba(45,106,79,0.3); border-color:#52B788;"><i class="fa-solid fa-circle-check"></i> SUDAH BUKA / READY BOOKING</span>`;
       }
 
       if (appConfig.heroImg) {
@@ -1207,24 +1213,12 @@
           `linear-gradient(rgba(44, 26, 23, 0.65), rgba(27, 67, 50, 0.75)), url('${appConfig.heroImg}')`;
       }
 
-      /* RENDER GALERI FOTO */
-      const galContainer = document.getElementById('galleryContainer');
       if (appConfig.gallery && appConfig.gallery.length > 0) {
         let html = '';
-        appConfig.gallery.forEach((item, idx) => {
-          html += `
-            <div class="gallery-item">
-              <img src="${item.url}" alt="${item.title || 'Foto Galeri'}" onerror="this.src='https://placehold.co/600x400/2C1A17/FFFFFF?text=Foto+Villa'">
-              <div class="gallery-caption">
-                <i class="fa-solid fa-camera" style="color:var(--gold);"></i>
-                <span>${item.title || 'Galeri Villa'}</span>
-              </div>
-            </div>
-          `;
+        appConfig.gallery.forEach(imgUrl => {
+          html += `<div class="gallery-item"><img src="${imgUrl}" alt="Gallery Villa"></div>`;
         });
-        galContainer.innerHTML = html;
-      } else {
-        galContainer.innerHTML = `<p style="text-align:center; grid-column:1/-1; color:var(--text-muted);">Belum ada foto galeri.</p>`;
+        document.getElementById('galleryContainer').innerHTML = html;
       }
     }
 
@@ -1234,5 +1228,4 @@
     };
   </script>
 </body>
-</html>
-```
+        </html>
