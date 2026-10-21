@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -41,7 +42,7 @@
       overflow-x: hidden;
     }
 
-    /* Header Simpel */
+    /* Header Simpel & Rapi */
     header {
       position: fixed;
       top: 0;
@@ -50,7 +51,7 @@
       background: rgba(253, 251, 247, 0.95);
       backdrop-filter: blur(10px);
       z-index: 1000;
-      padding: 1rem 0;
+      padding: 0.9rem 0;
       border-bottom: 1px solid rgba(44, 26, 23, 0.08);
     }
 
@@ -198,7 +199,6 @@
       gap: 1rem;
     }
 
-    /* Overlay Backdrop */
     .drawer-backdrop {
       position: fixed;
       top: 0;
@@ -311,7 +311,7 @@
       color: var(--cokelat-tua);
     }
 
-    /* Section Component */
+    /* Section Styling */
     section {
       padding: 5rem 0;
     }
@@ -327,6 +327,32 @@
       color: var(--cokelat-tua);
     }
 
+    .section-title p {
+      color: var(--text-muted);
+    }
+
+    /* About Grid */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-img {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .about-img img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Cards Grid */
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -335,20 +361,161 @@
 
     .card {
       background: var(--white);
-      padding: 2rem;
+      padding: 2.5rem 2rem;
       border-radius: 15px;
       box-shadow: var(--shadow);
+      transition: var(--transition);
     }
 
-    /* Modal Setting */
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* GALERI FOTO GRID VILLA */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      height: 260px;
+      box-shadow: var(--shadow);
+      background: #eae3d5;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.2rem 1rem 0.8rem;
+      background: linear-gradient(to top, rgba(44, 26, 23, 0.85), transparent);
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Order Form WA */
+    .order-box {
+      background: linear-gradient(135deg, var(--cokelat-tua), var(--hijau-forest));
+      color: var(--white);
+      border-radius: 25px;
+      padding: 3.5rem 2rem;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .order-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      text-align: left;
+    }
+
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .form-control {
+      padding: 0.85rem 1rem;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .form-control option {
+      background: var(--cokelat-tua);
+      color: var(--white);
+    }
+
+    .btn-submit-wa {
+      background-color: #25D366;
+      color: var(--white);
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 0.9rem;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: var(--transition);
+      margin-top: 0.5rem;
+    }
+
+    .btn-submit-wa:hover {
+      background-color: #1EBE5D;
+    }
+
+    /* Location Box */
+    .location-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .map-frame {
+      width: 100%;
+      height: 300px;
+      border-radius: 15px;
+      border: none;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--cokelat-tua);
+      color: var(--bg-krem);
+      padding: 3.5rem 0 1.5rem;
+      text-align: center;
+    }
+
+    /* Modal Setting Admin */
     .modal-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(5px);
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(6px);
       z-index: 3000;
       display: none;
       align-items: center;
@@ -364,14 +531,24 @@
       background: var(--bg-krem);
       border-radius: 20px;
       width: 100%;
-      max-width: 520px;
-      max-height: 90vh;
+      max-width: 650px;
+      max-height: 88vh;
       overflow-y: auto;
       padding: 2rem;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    }
+
+    .modal-section-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--hijau-forest);
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 6px;
+      margin: 1.5rem 0 1rem;
     }
 
     .input-group {
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.1rem;
     }
 
     .input-group label {
@@ -392,11 +569,15 @@
     .upload-box {
       background: var(--krem-card);
       border: 2px dashed var(--gold);
-      padding: 0.8rem;
-      border-radius: 8px;
+      padding: 0.9rem;
+      border-radius: 10px;
       text-align: center;
       cursor: pointer;
-      margin-top: 5px;
+      transition: var(--transition);
+    }
+
+    .upload-box:hover {
+      background: #EAE3D5;
     }
 
     .upload-box input[type="file"] {
@@ -407,9 +588,48 @@
       width: 100%;
       height: 100px;
       object-fit: cover;
-      border-radius: 6px;
+      border-radius: 8px;
       margin-top: 8px;
-      display: none;
+    }
+
+    /* Admin Gallery Manager List */
+    .admin-gallery-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .admin-gallery-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--white);
+      padding: 0.8rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .admin-gallery-item img {
+      width: 70px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .admin-gallery-info {
+      flex: 1;
+    }
+
+    .btn-danger {
+      background: #D90429;
+      color: white;
+      border: none;
+      padding: 0.5rem 0.8rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.8rem;
     }
 
     /* Floating WA */
@@ -431,7 +651,6 @@
       cursor: pointer;
     }
 
-    /* Admin Setting Button (Hidden in Client Mode) */
     .admin-only {
       display: flex;
     }
@@ -440,14 +659,8 @@
       display: none !important;
     }
 
-    footer {
-      background: var(--cokelat-tua);
-      color: var(--bg-krem);
-      padding: 3rem 0 1.5rem;
-      text-align: center;
-    }
-
-    @media (max-width: 768px) {
+    @media (max-width: 992px) {
+      .about-grid, .location-card { grid-template-columns: 1fr; }
       .hero h1 { font-size: 2.5rem; }
     }
   </style>
@@ -488,8 +701,10 @@
       <ul class="drawer-links">
         <li><a href="#about" onclick="toggleDrawer()">Tentang Villa</a></li>
         <li><a href="#suitability" onclick="toggleDrawer()">Kegiatan & Acara</a></li>
-        <li><a href="#gallery" onclick="toggleDrawer()">Galeri Foto</a></li>
-        <li><a href="#location" onclick="toggleDrawer()">Lokasi Google Maps</a></li>
+        <li><a href="#gallery" onclick="toggleDrawer()">Galeri Foto Villa</a></li>
+        <li><a href="#booking" onclick="toggleDrawer()">Form Pemesanan</a></li>
+        <li><a href="#blog" onclick="toggleDrawer()">Artikel Blog</a></li>
+        <li><a href="#location" onclick="toggleDrawer()">Lokasi Maps</a></li>
       </ul>
     </div>
 
@@ -498,9 +713,9 @@
         <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
       </button>
       
-      <!-- Tombol Admin Setting di Drawer -->
+      <!-- Tombol Admin Setting -->
       <button class="btn-outline admin-only" style="width:100%; justify-content:center; color:var(--cokelat-tua); border-color:var(--cokelat-tua);" onclick="toggleDrawer(); openModal();">
-        <i class="fa-solid fa-gear"></i> Pengaturan Web
+        <i class="fa-solid fa-gear"></i> Pengaturan Web (Admin)
       </button>
     </div>
   </div>
@@ -528,22 +743,142 @@
   <!-- Section About -->
   <section id="about">
     <div class="container">
+      <div class="about-grid">
+        <div class="about-img">
+          <img id="aboutImg" src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80" alt="Villa Exterior">
+        </div>
+        <div>
+          <h2 class="serif" style="font-family:'Cormorant Garamond', serif; font-size:2.5rem; color:var(--cokelat-tua); margin-bottom:1rem;">Suasana Asri & Privat Tepi Sungai</h2>
+          <p style="color:var(--text-muted); margin-bottom:1.2rem;">Villanesia Riverside dirancang khusus untuk Anda yang mendambakan udara segar dan suasana sungai alami. Tempat terbaik untuk rehat dari rutinitas perkotaan.</p>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:0.8rem;">
+            <li><i class="fa-solid fa-circle-check" style="color:var(--hijau-forest)"></i> Area outdoor luas untuk kumpul & outbound.</li>
+            <li><i class="fa-solid fa-circle-check" style="color:var(--hijau-forest)"></i> Akses privat langsung ke tepi sungai jernih.</li>
+            <li><i class="fa-solid fa-circle-check" style="color:var(--hijau-forest)"></i> Dapur lengkap, fasilitas BBQ, dan parkir aman.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Kegiatan -->
+  <section id="suitability" style="background-color: var(--krem-card);">
+    <div class="container">
       <div class="section-title">
-        <h2>Suasana Asri & Privat</h2>
-        <p>Rasukan ketenangan menginap dengan pemandangan alam sungai alami.</p>
+        <h2>Sempurna Untuk Berbagai Acara</h2>
+        <p>Akomodasi fleksibel untuk semua kebutuhan kelompok Anda</p>
       </div>
       <div class="grid-3">
         <div class="card">
-          <h3><i class="fa-solid fa-users" style="color:var(--hijau-forest)"></i> Acara Keluarga</h3>
-          <p>Cocok untuk reuni, arisan, dan liburan privat keluarga besar.</p>
+          <h3 style="color:var(--cokelat-tua); margin-bottom:0.8rem;"><i class="fa-solid fa-users" style="color:var(--hijau-forest)"></i> Acara Keluarga Besar</h3>
+          <p style="color:var(--text-muted);">Reuni, arisan, hingga pesta ulang tahun dalam balutan suasana intim dan nyaman.</p>
         </div>
         <div class="card">
-          <h3><i class="fa-solid fa-graduation-cap" style="color:var(--hijau-forest)"></i> Acara Sekolah</h3>
-          <p>Area lapang aman untuk makrab, camping, dan perpisahan sekolah.</p>
+          <h3 style="color:var(--cokelat-tua); margin-bottom:0.8rem;"><i class="fa-solid fa-graduation-cap" style="color:var(--hijau-forest)"></i> Kegiatan Sekolah & Kampus</h3>
+          <p style="color:var(--text-muted);">Aman untuk makrab, perpisahan, LDKO, serta kegiatan edukasi outdoor.</p>
         </div>
         <div class="card">
-          <h3><i class="fa-solid fa-briefcase" style="color:var(--hijau-forest)"></i> Gathering Instansi</h3>
-          <p>Fasilitas lengkap untuk acara rapat kerja dan outbound kantor.</p>
+          <h3 style="color:var(--cokelat-tua); margin-bottom:0.8rem;"><i class="fa-solid fa-briefcase" style="color:var(--hijau-forest)"></i> Gathering Instansi</h3>
+          <p style="color:var(--text-muted);">Area lapang untuk team building, outbound perusahaan, dan rapat kerja segar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERI FOTO SECTION (LENGKAP) -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-title">
+        <h2>Galeri Foto Villa</h2>
+        <p>Dokumentasi keindahan alam, arsitektur, dan fasilitas eksklusif kami</p>
+      </div>
+      <div class="gallery-grid" id="galleryContainer">
+        <!-- Rendered Dynamically via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Direct WA Booking Form Section -->
+  <section id="booking" style="background-color: var(--krem-card);">
+    <div class="container">
+      <div class="order-box">
+        <h2 style="font-family:'Cormorant Garamond', serif; font-size: 2.3rem; text-align: center; margin-bottom: 0.5rem;">Formulir Tanya Sewa & Reservasi</h2>
+        <p style="text-align: center; opacity: 0.9; font-size: 0.95rem;">Isi formulir ringkas ini untuk langsung terhubung dengan WhatsApp marketing kami.</p>
+
+        <form class="order-form" onsubmit="handleFormSubmit(event)">
+          <div class="form-group">
+            <label>Nama Lengkap / Instansi</label>
+            <input type="text" id="formNama" class="form-control" placeholder="Contoh: Bpk. Ivan / Komunitas X" required>
+          </div>
+          <div class="form-group">
+            <label>Jenis Kegiatan</label>
+            <select id="formAcara" class="form-control" required>
+              <option value="Acara Keluarga Besar">Acara Keluarga Besar</option>
+              <option value="Kegiatan Sekolah / Makrab">Kegiatan Sekolah / Makrab Kampus</option>
+              <option value="Gathering / Outbound Perusahaan">Gathering / Outbound Perusahaan</option>
+              <option value="Lainnya">Lainnya</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Rencana Tanggal Sewa</label>
+            <input type="date" id="formTanggal" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label>Perkiraan Jumlah Peserta (Orang)</label>
+            <input type="number" id="formPeserta" class="form-control" placeholder="Contoh: 25" required>
+          </div>
+          <button type="submit" class="btn-submit-wa">
+            <i class="fa-brands fa-whatsapp"></i> Kirim Pesan Reservasi via WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Teaser Section -->
+  <section id="blog">
+    <div class="container">
+      <div class="section-title">
+        <h2>Artikel Blog & Tips</h2>
+        <p>Inspirasi kegiatan outdoor dan panduan sewa villa</p>
+      </div>
+      <div class="grid-3">
+        <div class="card" style="padding:0; overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1533587851505-d119e13fa0d7?auto=format&fit=crop&w=600&q=80" style="width:100%; height:180px; object-fit:cover;" alt="Blog 1">
+          <div style="padding:1.5rem;">
+            <span style="font-size:0.75rem; color:var(--gold); font-weight:700;">COMING SOON BLOG</span>
+            <h3 style="font-size:1.2rem; margin:0.4rem 0; color:var(--cokelat-tua);">5 Permainan Outbound Paling Seru di Tepi Sungai</h3>
+            <p style="font-size:0.85rem; color:var(--text-muted);">Membangun kekompakan tim sekolah & kantor dengan kegiatan air menyenangkan...</p>
+          </div>
+        </div>
+        <div class="card" style="padding:0; overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=600&q=80" style="width:100%; height:180px; object-fit:cover;" alt="Blog 2">
+          <div style="padding:1.5rem;">
+            <span style="font-size:0.75rem; color:var(--gold); font-weight:700;">COMING SOON BLOG</span>
+            <h3 style="font-size:1.2rem; margin:0.4rem 0; color:var(--cokelat-tua);">Tips Memilih Villa Besar Untuk Acara Keluarga</h3>
+            <p style="font-size:0.85rem; color:var(--text-muted);">Panduan menyiapkan konsumsi, area kumpul, serta perlengkapan BBQ yang aman...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location Section -->
+  <section id="location" style="background-color: var(--krem-card);">
+    <div class="container">
+      <div class="section-title">
+        <h2>Lokasi Presisi</h2>
+        <p>Akses mudah untuk seluruh kendaraan rombongan Anda</p>
+      </div>
+      <div class="location-card">
+        <div>
+          <h3 style="font-family:'Cormorant Garamond', serif; font-size:2rem; color:var(--cokelat-tua); margin-bottom:1rem;">Villanesia Riverside</h3>
+          <p style="color:var(--text-muted); margin-bottom:1.5rem;">Klik tombol di bawah untuk langsung membuka rute di aplikasi Google Maps HP Anda.</p>
+          <button class="btn-primary" onclick="directMaps()">
+            <i class="fa-solid fa-map-location-dot"></i> Buka Direct Google Maps
+          </button>
+        </div>
+        <div>
+          <iframe class="map-frame" src="https://maps.google.com/maps?q=-6.6,106.8&hl=id&z=14&output=embed" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>
     </div>
@@ -553,12 +888,12 @@
   <footer>
     <div class="container">
       <p>&copy; 2026 Villanesia Riverside. All Rights Reserved.</p>
-      <p style="font-size:0.85rem; opacity:0.7; margin-top:5px;">Marketing: <span id="footerMarketingName">Ivan Nolan</span> (+62 822-1155-9404)</p>
+      <p style="font-size:0.85rem; opacity:0.7; margin-top:5px;">Marketing: <span id="footerMarketingName">Ivan Nolan</span> (<span id="footerPhone">+62 822-1155-9404</span>)</p>
       
-      <!-- Option Admin Setting di Footer -->
+      <!-- Option Admin Setting -->
       <div class="admin-only" style="justify-content: center; margin-top: 15px;">
         <button onclick="openModal()" style="background:none; border:none; color:var(--gold); cursor:pointer; font-size:0.85rem; text-decoration:underline;">
-          <i class="fa-solid fa-gear"></i> Menu Admin / Setting
+          <i class="fa-solid fa-gear"></i> Menu Admin / Setting Galeri
         </button>
       </div>
     </div>
@@ -569,19 +904,21 @@
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
-  <!-- Modal Settings Dynamic -->
+  <!-- MODAL SETTINGS ADMIN (PENUH FITUR GALERI EDITOR) -->
   <div class="modal-overlay" id="settingModal">
     <div class="modal-card">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
-        <h3 style="color:var(--cokelat-tua);"><i class="fa-solid fa-sliders"></i> Pengaturan Web Admin</h3>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+        <h3 style="color:var(--cokelat-tua);"><i class="fa-solid fa-sliders"></i> Pengaturan Web & Galeri Foto</h3>
         <button onclick="closeModal()" style="background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
       </div>
 
+      <!-- General Config -->
+      <div class="modal-section-title"><i class="fa-solid fa-info-circle"></i> Informasi & Status Villa</div>
       <div class="input-group">
-        <label>Status Villa</label>
+        <label>Status Operasional Villa</label>
         <select id="cfgStatus">
-          <option value="COMING_SOON">Coming Soon</option>
-          <option value="READY">Sudah Buka / Ready</option>
+          <option value="COMING_SOON">COMING SOON - SEGERA HADIR</option>
+          <option value="READY">SUDAH BUKA - READY FOR BOOKING</option>
         </select>
       </div>
 
@@ -591,48 +928,74 @@
       </div>
 
       <div class="input-group">
-        <label>Nomor WhatsApp (+62...)</label>
+        <label>Nomor WhatsApp WhatsApp (+62...)</label>
         <input type="text" id="cfgPhone" value="+62 822-1155-9404">
       </div>
 
+      <!-- Hero Photo -->
+      <div class="modal-section-title"><i class="fa-solid fa-image"></i> Foto Utama (Hero Background)</div>
       <div class="input-group">
-        <label>Email Kontak</label>
-        <input type="email" id="cfgEmail" value="info@villanesia.com">
-      </div>
-
-      <!-- Upload Foto Background Hero -->
-      <div class="input-group">
-        <label>Foto Background Hero (Bisa Upload HP/PC/URL)</label>
         <div class="upload-box" onclick="document.getElementById('heroFileInput').click()">
-          <i class="fa-solid fa-cloud-arrow-up" style="font-size:1.5rem; color:var(--gold);"></i>
-          <p style="font-size:0.8rem; color:var(--text-muted); margin-top:3px;">Klik untuk Unggah Foto dari Galeri (Auto Compress)</p>
-          <input type="file" id="heroFileInput" accept="image/*" onchange="handleImageUpload(event, 'hero')">
+          <i class="fa-solid fa-cloud-arrow-up" style="font-size:1.3rem; color:var(--gold);"></i>
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-top:4px;">Klik untuk Unggah Foto Hero Baru (dari HP/PC)</p>
+          <input type="file" id="heroFileInput" accept="image/*" onchange="handleHeroUpload(event)">
         </div>
-        <img id="heroPreview" class="upload-preview" alt="Preview Background Hero">
+        <img id="heroPreview" class="upload-preview" style="display:none;" alt="Preview Hero">
       </div>
 
-      <button class="btn-primary" style="width:100%; justify-content:center; margin-bottom: 10px;" onclick="saveSettings()">
-        <i class="fa-solid fa-floppy-disk"></i> Simpan Perubahan
+      <!-- GALERI MANAGER PERFORMA LENGKAP -->
+      <div class="modal-section-title" style="display:flex; justify-content:space-between; align-items:center;">
+        <span><i class="fa-solid fa-images"></i> Manajemen Galeri Foto Villa</span>
+        <button class="btn-primary" style="padding:0.4rem 0.8rem; font-size:0.75rem;" onclick="addNewGalleryItem()">
+          <i class="fa-solid fa-plus"></i> Tambah Foto
+        </button>
+      </div>
+
+      <div class="admin-gallery-list" id="adminGalleryList">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- Actions -->
+      <button class="btn-primary" style="width:100%; justify-content:center; margin-bottom: 10px; padding: 0.9rem;" onclick="saveSettings()">
+        <i class="fa-solid fa-floppy-disk"></i> Simpan Semua Perubahan
       </button>
 
-      <!-- Button Khusus Generator Link Client -->
       <button class="btn-outline" style="width:100%; justify-content:center; color:var(--cokelat-tua); border-color:var(--cokelat-tua);" onclick="copyClientLink()">
-        <i class="fa-solid fa-link"></i> Salin Link Khusus Klien (Tanpa Setting)
+        <i class="fa-solid fa-link"></i> Salin Link Khusus Klien (Tanpa Tombol Admin)
       </button>
     </div>
   </div>
 
   <script>
     const MAPS_URL = "https://maps.app.goo.gl/ySFqTtAbkvroezxZ6";
+    
+    // Default App Data
     let appConfig = {
       status: "COMING_SOON",
       name: "Ivan Nolan",
       phone: "+62 822-1155-9404",
       email: "info@villanesia.com",
-      heroImg: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80"
+      heroImg: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80",
+      gallery: [
+        {
+          title: "Area Kolam Renang & Taman",
+          url: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          title: "Pemandangan Tepi Sungai",
+          url: "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          title: "Kamar Utama Nyaman & Mewah",
+          url: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80"
+        },
+        {
+          title: "Ruang Kumpul Keluarga Luas",
+          url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80"
+        }
+      ]
     };
 
-    // Deteksi Parameter Client Mode
     function checkClientMode() {
       const urlParams = new URLSearchParams(window.location.search);
       if (urlParams.get('mode') === 'client') {
@@ -640,7 +1003,6 @@
       }
     }
 
-    // Direct WA System
     function directWA(message) {
       const cleanPhone = appConfig.phone.replace(/[^0-9]/g, '');
       const encodedMsg = encodeURIComponent(message);
@@ -654,7 +1016,6 @@
       }
     }
 
-    // Direct Maps System
     function directMaps() {
       try {
         const win = window.open(MAPS_URL, '_blank');
@@ -673,13 +1034,14 @@
       document.getElementById('cfgStatus').value = appConfig.status;
       document.getElementById('cfgName').value = appConfig.name;
       document.getElementById('cfgPhone').value = appConfig.phone;
-      document.getElementById('cfgEmail').value = appConfig.email;
       
       if(appConfig.heroImg) {
         const prev = document.getElementById('heroPreview');
         prev.src = appConfig.heroImg;
         prev.style.display = 'block';
       }
+
+      renderAdminGalleryList();
       document.getElementById('settingModal').classList.add('active');
     }
 
@@ -687,18 +1049,67 @@
       document.getElementById('settingModal').classList.remove('active');
     }
 
-    // FUNGSI OTO-KOMPRESI GAMBAR (Ukuran Boleh Berapapun)
-    function handleImageUpload(event, target) {
-      const file = event.target.files[0];
-      if (!file) return;
+    /* RENDER DYNAMIC ADMIN GALLERY LIST */
+    function renderAdminGalleryList() {
+      const container = document.getElementById('adminGalleryList');
+      if (!appConfig.gallery || appConfig.gallery.length === 0) {
+        container.innerHTML = `<p style="font-size:0.85rem; color:var(--text-muted); text-align:center;">Belum ada foto galeri. Klik 'Tambah Foto' di atas.</p>`;
+        return;
+      }
 
+      let html = '';
+      appConfig.gallery.forEach((item, index) => {
+        html += `
+          <div class="admin-gallery-item">
+            <img src="${item.url}" alt="Foto ${index + 1}" onerror="this.src='https://placehold.co/100x80/2C1A17/FFFFFF?text=Foto'">
+            <div class="admin-gallery-info">
+              <input type="text" value="${item.title || ''}" placeholder="Judul/Keterangan Foto" 
+                onchange="updateGalleryTitle(${index}, this.value)" style="width:100%; padding:4px 8px; font-size:0.8rem; margin-bottom:4px; border:1px solid #ccc; border-radius:4px;">
+              <div style="display:flex; gap:6px;">
+                <button style="background:var(--hijau-forest); color:white; border:none; padding:3px 8px; border-radius:4px; font-size:0.7rem; cursor:pointer;" onclick="triggerGalleryUpload(${index})">
+                  <i class="fa-solid fa-upload"></i> Unggah Foto
+                </button>
+                <input type="file" id="galInput_${index}" accept="image/*" style="display:none;" onchange="handleGalleryUpload(event, ${index})">
+              </div>
+            </div>
+            <button class="btn-danger" onclick="deleteGalleryItem(${index})"><i class="fa-solid fa-trash"></i></button>
+          </div>
+        `;
+      });
+      container.innerHTML = html;
+    }
+
+    function updateGalleryTitle(index, val) {
+      appConfig.gallery[index].title = val;
+    }
+
+    function addNewGalleryItem() {
+      appConfig.gallery.push({
+        title: "Pemandangan Villanesia",
+        url: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80"
+      });
+      renderAdminGalleryList();
+    }
+
+    function deleteGalleryItem(index) {
+      if(confirm('Hapus foto ini dari galeri?')) {
+        appConfig.gallery.splice(index, 1);
+        renderAdminGalleryList();
+      }
+    }
+
+    function triggerGalleryUpload(index) {
+      document.getElementById(`galInput_${index}`).click();
+    }
+
+    // Auto Compress & Convert Canvas untuk Foto Besarkan apapun
+    function compressImage(file, callback) {
       const reader = new FileReader();
       reader.onload = function(e) {
         const img = new Image();
         img.onload = function() {
-          // Canvas kompresi gambar
           const canvas = document.createElement('canvas');
-          const MAX_WIDTH = 1280; // Resolusi HD Cukup Untuk Web
+          const MAX_WIDTH = 1200;
           let width = img.width;
           let height = img.height;
 
@@ -712,38 +1123,67 @@
           const ctx = canvas.getContext('2d');
           ctx.drawImage(img, 0, 0, width, height);
 
-          // Kompresi kualitas ke JPEG 75%
           const compressedBase64 = canvas.toDataURL('image/jpeg', 0.75);
-
-          if (target === 'hero') {
-            appConfig.heroImg = compressedBase64;
-            const prev = document.getElementById('heroPreview');
-            prev.src = compressedBase64;
-            prev.style.display = 'block';
-          }
+          callback(compressedBase64);
         };
         img.src = e.target.result;
       };
       reader.readAsDataURL(file);
     }
 
+    function handleHeroUpload(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      compressImage(file, function(base64) {
+        appConfig.heroImg = base64;
+        const prev = document.getElementById('heroPreview');
+        prev.src = base64;
+        prev.style.display = 'block';
+      });
+    }
+
+    function handleGalleryUpload(e, index) {
+      const file = e.target.files[0];
+      if (!file) return;
+      compressImage(file, function(base64) {
+        appConfig.gallery[index].url = base64;
+        renderAdminGalleryList();
+      });
+    }
+
     function saveSettings() {
       appConfig.status = document.getElementById('cfgStatus').value;
       appConfig.name = document.getElementById('cfgName').value;
       appConfig.phone = document.getElementById('cfgPhone').value;
-      appConfig.email = document.getElementById('cfgEmail').value;
 
       localStorage.setItem('villanesia_cfg', JSON.stringify(appConfig));
       renderUI();
       closeModal();
-      alert('Pengaturan & foto berhasil disimpan!');
+      alert('Pengaturan dan Galeri Foto berhasil diperbarui!');
     }
 
     function copyClientLink() {
       const clientUrl = window.location.origin + window.location.pathname + '?mode=client';
       navigator.clipboard.writeText(clientUrl).then(() => {
-        alert('Link Khusus Klien berhasil disalin!\n\nURL: ' + clientUrl + '\n\n(Link ini tidak akan menampilkan menu Pengaturan Web/Admin).');
+        alert('Link Khusus Klien berhasil disalin!\n\nURL: ' + clientUrl + '\n\n(Menu pengaturan admin akan otomatis disembunyikan saat disebar ke klien).');
       });
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const nama = document.getElementById('formNama').value;
+      const acara = document.getElementById('formAcara').value;
+      const tanggal = document.getElementById('formTanggal').value;
+      const peserta = document.getElementById('formPeserta').value;
+
+      const message = `Halo ${appConfig.name}, saya ingin booking/reservasi Villanesia Riverside:\n\n` +
+                      `• Nama: ${nama}\n` +
+                      `• Jenis Acara: ${acara}\n` +
+                      `• Tanggal Sewa: ${tanggal}\n` +
+                      `• Jumlah Peserta: ${peserta} Orang\n\n` +
+                      `Mohon info ketersediaan dan daftar harganya. Terima kasih!`;
+
+      directWA(message);
     }
 
     function renderUI() {
@@ -753,17 +1193,38 @@
       }
 
       document.getElementById('footerMarketingName').innerText = appConfig.name;
-      const badgeContainer = document.getElementById('badgeContainer');
+      document.getElementById('footerPhone').innerText = appConfig.phone;
 
+      const badgeContainer = document.getElementById('badgeContainer');
       if (appConfig.status === 'COMING_SOON') {
         badgeContainer.innerHTML = `<span class="badge-status"><i class="fa-solid fa-clock"></i> COMING SOON - SEGERA HADIR</span>`;
       } else {
-        badgeContainer.innerHTML = `<span class="badge-status" style="background:rgba(45,106,79,0.3); border-color:#52B788;"><i class="fa-solid fa-circle-check"></i> SUDAH BUKA / READY BOOKING</span>`;
+        badgeContainer.innerHTML = `<span class="badge-status" style="background:rgba(45,106,79,0.3); border-color:#52B788;"><i class="fa-solid fa-circle-check"></i> SUDAH BUKA - READY FOR BOOKING</span>`;
       }
 
       if (appConfig.heroImg) {
         document.getElementById('heroBg').style.backgroundImage = 
           `linear-gradient(rgba(44, 26, 23, 0.65), rgba(27, 67, 50, 0.75)), url('${appConfig.heroImg}')`;
+      }
+
+      /* RENDER GALERI FOTO */
+      const galContainer = document.getElementById('galleryContainer');
+      if (appConfig.gallery && appConfig.gallery.length > 0) {
+        let html = '';
+        appConfig.gallery.forEach((item, idx) => {
+          html += `
+            <div class="gallery-item">
+              <img src="${item.url}" alt="${item.title || 'Foto Galeri'}" onerror="this.src='https://placehold.co/600x400/2C1A17/FFFFFF?text=Foto+Villa'">
+              <div class="gallery-caption">
+                <i class="fa-solid fa-camera" style="color:var(--gold);"></i>
+                <span>${item.title || 'Galeri Villa'}</span>
+              </div>
+            </div>
+          `;
+        });
+        galContainer.innerHTML = html;
+      } else {
+        galContainer.innerHTML = `<p style="text-align:center; grid-column:1/-1; color:var(--text-muted);">Belum ada foto galeri.</p>`;
       }
     }
 
@@ -774,3 +1235,4 @@
   </script>
 </body>
 </html>
+```
