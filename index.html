@@ -1,792 +1,688 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Villanesia Riverside - Premium Riverside Villa & Event Venue</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Villanesia Riverside - Exclusive Retreat</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Tailwind Configuration for Themes -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        cream: {
-                            50: '#FDFBF7',
-                            100: '#F7F3EB',
-                            200: '#E8DFD1',
-                        },
-                        brown: {
-                            800: '#4A2E2B',
-                            900: '#3E2723',
-                        },
-                        forest: {
-                            500: '#2E5A44',
-                            700: '#1B4332',
-                            800: '#143326',
-                        }
-                    },
-                    fontFamily: {
-                        serif: ['"Playfair Display"', 'serif'],
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .glass-nav {
-            background: rgba(253, 251, 247, 0.94);
-            backdrop-filter: blur(12px);
-        }
-        .hero-gradient {
-            background: linear-gradient(180deg, rgba(62, 39, 35, 0.75) 0%, rgba(27, 67, 50, 0.85) 100%);
-        }
-    </style>
+  <style>
+    :root {
+      --bg-krem: #FDFBF7;
+      --krem-card: #F4EFE6;
+      --cokelat-tua: #2C1A17;
+      --hijau-forest: #1B4332;
+      --hijau-accent: #2D6A4F;
+      --gold: #C5A059;
+      --text-dark: #2B2B2B;
+      --text-muted: #666666;
+      --white: #FFFFFF;
+      --shadow: 0 10px 30px rgba(44, 26, 23, 0.08);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-krem);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Header Simpel */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(253, 251, 247, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(44, 26, 23, 0.08);
+    }
+
+    .nav-container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-badge {
+      width: 42px;
+      height: 42px;
+      background-color: var(--hijau-forest);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+
+    .logo-brand {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--cokelat-tua);
+      line-height: 1;
+    }
+
+    .logo-sub {
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    /* Burger Menu Icon */
+    .burger-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--krem-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      transition: var(--transition);
+      border: 1px solid rgba(44, 26, 23, 0.1);
+    }
+
+    .burger-icon span {
+      width: 18px;
+      height: 2px;
+      background-color: var(--cokelat-tua);
+      transition: var(--transition);
+    }
+
+    .burger-icon:hover {
+      background: var(--cokelat-tua);
+    }
+
+    .burger-icon:hover span {
+      background-color: var(--white);
+    }
+
+    /* Fullscreen Drawer Navigation */
+    .nav-drawer {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      max-width: 380px;
+      height: 100vh;
+      background-color: var(--bg-krem);
+      z-index: 2000;
+      box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+    }
+
+    .nav-drawer.active {
+      right: 0;
+    }
+
+    .drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .close-drawer {
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      color: var(--cokelat-tua);
+      cursor: pointer;
+    }
+
+    .drawer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .drawer-links a {
+      text-decoration: none;
+      color: var(--cokelat-tua);
+      font-size: 1.2rem;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .drawer-links a:hover {
+      color: var(--gold);
+      padding-left: 5px;
+    }
+
+    .drawer-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    /* Overlay Backdrop */
+    .drawer-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(4px);
+      z-index: 1999;
+      display: none;
+    }
+
+    .drawer-backdrop.active {
+      display: block;
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 100px;
+      background: linear-gradient(rgba(44, 26, 23, 0.65), rgba(27, 67, 50, 0.75)), 
+                  url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .badge-status {
+      display: inline-block;
+      padding: 6px 18px;
+      background: rgba(197, 160, 89, 0.2);
+      border: 1px solid var(--gold);
+      color: #FFF8E7;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 750px;
+      margin: 0 auto 2.5rem;
+      font-weight: 300;
+      opacity: 0.9;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background-color: var(--hijau-forest);
+      color: var(--white);
+      padding: 0.85rem 1.8rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--hijau-accent);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid var(--white);
+      padding: 0.85rem 1.8rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--cokelat-tua);
+    }
+
+    /* Section Component */
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      color: var(--cokelat-tua);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+    }
+
+    /* Modal Setting */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(5px);
+      z-index: 3000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-card {
+      background: var(--bg-krem);
+      border-radius: 20px;
+      width: 100%;
+      max-width: 500px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 2rem;
+    }
+
+    .input-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--cokelat-tua);
+    }
+
+    .input-group input, .input-group select {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: 1px solid #CCC;
+    }
+
+    /* Floating WA */
+    .floating-wa {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25D366;
+      color: white;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 999;
+      cursor: pointer;
+    }
+
+    /* Admin Setting Button (Hidden in Client Mode) */
+    .admin-only {
+      display: flex;
+    }
+
+    body.client-mode .admin-only {
+      display: none !important;
+    }
+
+    footer {
+      background: var(--cokelat-tua);
+      color: var(--bg-krem);
+      padding: 3rem 0 1.5rem;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+    }
+  </style>
 </head>
-<body class="bg-cream-50 text-brown-900 font-sans antialiased selection:bg-forest-700 selection:text-white">
+<body>
 
-    <!-- Sticky Header Navigation -->
-    <header class="sticky top-0 z-40 glass-nav border-b border-cream-200 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                
-                <!-- Logo & Dynamic Status Badge -->
-                <div class="flex items-center space-x-3">
-                    <a href="#home" class="flex flex-col">
-                        <span class="font-serif text-2xl md:text-3xl font-bold tracking-tight text-brown-900">Villanesia</span>
-                        <span class="text-xs uppercase tracking-widest text-forest-700 font-bold -mt-1">Riverside</span>
-                    </a>
-                    <span id="headerStatusBadge" class="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-bold bg-amber-100 text-amber-900 border border-amber-300 shadow-sm">
-                        <i class="fa-solid fa-clock mr-1 text-amber-700"></i> COMING SOON
-                    </span>
-                </div>
-
-                <!-- Desktop Navigation Menu -->
-                <nav class="hidden md:flex space-x-7 items-center">
-                    <a href="#home" class="text-brown-800 hover:text-forest-700 font-medium text-sm transition-colors">Beranda</a>
-                    <a href="#about" class="text-brown-800 hover:text-forest-700 font-medium text-sm transition-colors">Tentang Kami</a>
-                    <a href="#packages" class="text-brown-800 hover:text-forest-700 font-medium text-sm transition-colors">Fasilitas & Paket</a>
-                    <a href="#gallery" class="text-brown-800 hover:text-forest-700 font-medium text-sm transition-colors">Galeri Foto</a>
-                    <a href="#blog" class="text-brown-800 hover:text-forest-700 font-medium text-sm transition-colors">Blog</a>
-                    <a href="https://maps.app.goo.gl/ySFqTtAbkvroezxZ6" target="_blank" rel="noopener noreferrer" class="text-brown-800 hover:text-forest-700 font-medium text-sm transition-colors flex items-center gap-1">
-                        <i class="fa-solid fa-map-location-dot text-forest-700"></i> Lokasi Maps
-                    </a>
-                </nav>
-
-                <!-- Desktop Action Buttons -->
-                <div class="hidden md:flex items-center space-x-3">
-                    <button onclick="openSettingsModal()" title="Pengaturan Kontak & Foto" class="p-2 text-brown-800 hover:text-forest-700 hover:bg-cream-200 rounded-full transition-colors flex items-center gap-1.5 text-xs font-semibold px-3 py-2 border border-cream-200">
-                        <i class="fa-solid fa-gear text-base text-forest-700"></i>
-                        <span>Setting</span>
-                    </button>
-                    <a id="navWaBtn" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-forest-700 hover:bg-forest-800 text-white font-medium text-sm shadow-md hover:shadow-lg transition-all duration-200">
-                        <i class="fa-brands fa-whatsapp text-lg mr-2"></i> Tanya Sewa
-                    </a>
-                </div>
-
-                <!-- Mobile Controls & Burger Button -->
-                <div class="flex items-center space-x-2 md:hidden">
-                    <button onclick="openSettingsModal()" title="Pengaturan" class="p-2 text-brown-800 hover:text-forest-700 hover:bg-cream-200 rounded-lg">
-                        <i class="fa-solid fa-gear text-xl"></i>
-                    </button>
-                    <button id="burgerBtn" onclick="toggleMobileMenu()" class="p-2 rounded-lg text-brown-800 hover:text-forest-700 hover:bg-cream-200 focus:outline-none">
-                        <i id="burgerIcon" class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
-
-            </div>
+  <!-- Header Simpel -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <div class="logo-badge"><i class="fa-solid fa-tree"></i></div>
+        <div class="logo-brand">
+          <span class="logo-title">Villanesia</span>
+          <span class="logo-sub">Riverside</span>
         </div>
+      </a>
 
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobileMenu" class="hidden md:hidden bg-cream-100 border-b border-cream-200 px-4 pt-2 pb-6 space-y-3">
-            <a href="#home" onclick="toggleMobileMenu()" class="block py-2 text-brown-900 font-medium hover:text-forest-700 border-b border-cream-200">Beranda</a>
-            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-brown-900 font-medium hover:text-forest-700 border-b border-cream-200">Tentang Kami</a>
-            <a href="#packages" onclick="toggleMobileMenu()" class="block py-2 text-brown-900 font-medium hover:text-forest-700 border-b border-cream-200">Fasilitas & Paket</a>
-            <a href="#gallery" onclick="toggleMobileMenu()" class="block py-2 text-brown-900 font-medium hover:text-forest-700 border-b border-cream-200">Galeri Foto</a>
-            <a href="#blog" onclick="toggleMobileMenu()" class="block py-2 text-brown-900 font-medium hover:text-forest-700 border-b border-cream-200">Blog & Artikel</a>
-            <a href="#booking" onclick="toggleMobileMenu()" class="block py-2 text-brown-900 font-medium hover:text-forest-700 border-b border-cream-200">Form Order WA</a>
-            
-            <a href="https://maps.app.goo.gl/ySFqTtAbkvroezxZ6" target="_blank" rel="noopener noreferrer" class="w-full mt-2 inline-flex items-center justify-center px-4 py-2.5 rounded-xl border border-brown-800 text-brown-900 font-medium text-sm bg-white">
-                <i class="fa-solid fa-map-location-dot text-amber-700 mr-2"></i> Buka Direct Google Maps
-            </a>
-            <a id="mobileWaBtn" href="#" target="_blank" rel="noopener noreferrer" class="w-full mt-2 inline-flex items-center justify-center px-4 py-3 rounded-xl bg-forest-700 text-white font-medium shadow">
-                <i class="fa-brands fa-whatsapp text-xl mr-2"></i> Hubungi Pengelola (WA)
-            </a>
+      <!-- Burger Menu Icon -->
+      <div class="burger-icon" onclick="toggleDrawer()">
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Fullscreen Drawer Navigation -->
+  <div class="drawer-backdrop" id="drawerBackdrop" onclick="toggleDrawer()"></div>
+  <div class="nav-drawer" id="navDrawer">
+    <div>
+      <div class="drawer-header">
+        <div class="logo-brand">
+          <span class="logo-title">Villanesia</span>
+          <span class="logo-sub">Riverside</span>
         </div>
-    </header>
+        <button class="close-drawer" onclick="toggleDrawer()">&times;</button>
+      </div>
 
-    <!-- Hero Section -->
-    <section id="home" class="relative min-h-[88vh] flex items-center justify-center bg-brown-900 overflow-hidden">
-        <!-- Background Image with Gradient Overlay -->
-        <div class="absolute inset-0 z-0">
-            <img id="heroBgImg" src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80" alt="Villanesia Riverside View" class="w-full h-full object-cover transition-all duration-500">
-            <div class="absolute inset-0 hero-gradient"></div>
-        </div>
-
-        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white py-20">
-            <!-- Dynamic Status Badge in Hero -->
-            <div id="heroStatusBadge" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/80 border border-amber-300/50 backdrop-blur-md mb-6">
-                <span class="w-2.5 h-2.5 rounded-full bg-amber-200 animate-ping"></span>
-                <span class="text-xs sm:text-sm font-semibold tracking-wide uppercase text-white">Status: Coming Soon</span>
-            </div>
-            
-            <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight">
-                Villanesia Riverside
-            </h1>
-            
-            <p class="text-lg sm:text-2xl font-light text-cream-100 max-w-3xl mx-auto mb-10 leading-relaxed">
-                Villa Sewa Tepi Sungai Alami untuk Liburan Keluarga, Outbound Sekolah, Gathering Perusahaan & Camping.
-            </p>
-
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a id="heroWaBtn" href="#" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl bg-forest-700 hover:bg-forest-800 text-white font-semibold text-lg shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-                    <i class="fa-brands fa-whatsapp text-2xl mr-3"></i> <span id="heroBtnText">Tanya Sewa via WhatsApp</span>
-                </a>
-                
-                <!-- Direct Google Maps Link -->
-                <a href="https://maps.app.goo.gl/ySFqTtAbkvroezxZ6" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-xl bg-cream-50/15 hover:bg-cream-50/25 text-white font-semibold text-lg border border-white/30 backdrop-blur-sm transition-all duration-300">
-                    <i class="fa-solid fa-map-location-dot text-amber-400 mr-3"></i> Buka Direct Google Maps
-                </a>
-            </div>
-
-            <!-- Quick Features -->
-            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 p-4 rounded-2xl bg-brown-900/70 backdrop-blur-md border border-white/10 text-cream-100 text-sm">
-                <div class="p-2">
-                    <i class="fa-solid fa-water text-amber-400 text-xl mb-1"></i>
-                    <p class="font-semibold">Direct Access Sungai</p>
-                </div>
-                <div class="p-2">
-                    <i class="fa-solid fa-users text-amber-400 text-xl mb-1"></i>
-                    <p class="font-semibold">Kapasitas Besar</p>
-                </div>
-                <div class="p-2">
-                    <i class="fa-solid fa-campground text-amber-400 text-xl mb-1"></i>
-                    <p class="font-semibold">Area Outbound & Camping</p>
-                </div>
-                <div class="p-2">
-                    <i class="fa-solid fa-tree text-amber-400 text-xl mb-1"></i>
-                    <p class="font-semibold">Udara Pegunungan Sejuk</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-cream-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                
-                <div class="relative">
-                    <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
-                        <img id="aboutImg" src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=1000&q=80" alt="Suasana Villanesia Riverside" class="w-full h-[400px] object-cover transition-all duration-500">
-                    </div>
-                    <div class="absolute -bottom-6 -right-6 bg-forest-700 text-white p-6 rounded-2xl shadow-xl hidden sm:block max-w-xs border border-white/20">
-                        <i class="fa-solid fa-quote-left text-2xl text-amber-400 mb-2"></i>
-                        <p class="text-xs italic leading-relaxed">"Destinasi utama melepas penat dengan gemericik sungai alami dan pemandangan hijau asri."</p>
-                    </div>
-                </div>
-
-                <div class="space-y-6">
-                    <span class="text-forest-700 font-bold uppercase tracking-wider text-xs bg-forest-50 px-3 py-1 rounded-md border border-forest-200">Tentang Villanesia Riverside</span>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brown-900 leading-tight">
-                        Pengalaman Menginap & Event Terbaik di Tepi Sungai
-                    </h2>
-                    <p class="text-brown-800 text-sm leading-relaxed">
-                        <strong>Villanesia Riverside</strong> hadir memberikan konsep hunian villa terbuka di tepi sungai. Dengan fasilitas outdoor luas dan bangunan villa yang nyaman, tempat ini dirancang khusus untuk kenyamanan liburan privat maupun acara skala besar.
-                    </p>
-                    <p class="text-brown-800 text-sm leading-relaxed">
-                        Pengelola marketing resmi kami, <strong id="aboutMarketingName">Ivan Nolan</strong>, siap membantu segala perencanaan reservasi, pemesanan katering, fasilitas audio system, hingga pengaturan jadwal kegiatan acara Anda.
-                    </p>
-                    
-                    <div class="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="flex items-start space-x-3 bg-white p-4 rounded-xl border border-cream-200 shadow-sm">
-                            <i class="fa-solid fa-bus text-forest-700 text-xl mt-0.5"></i>
-                            <div>
-                                <h4 class="font-bold text-brown-900 text-xs">Akses Bus Besar</h4>
-                                <p class="text-[11px] text-brown-800">Akses jalan mudah & parkir lapang aman untuk bus rombongan sekolah/perusahaan.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-3 bg-white p-4 rounded-xl border border-cream-200 shadow-sm">
-                            <i class="fa-solid fa-shield-halved text-forest-700 text-xl mt-0.5"></i>
-                            <div>
-                                <h4 class="font-bold text-brown-900 text-xs">Privasi Terjaga</h4>
-                                <p class="text-[11px] text-brown-800">Satu grup menyewa area eksklusif tanpa gangguan pengunjung lain.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Packages & Facilities Section -->
-    <section id="packages" class="py-20 bg-cream-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-forest-700 font-bold uppercase tracking-wider text-xs bg-forest-50 px-3 py-1 rounded-md border border-forest-200">Layanan & Fasilitas</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brown-900 mt-3">Cocok Untuk Berbagai Kegiatan</h2>
-                <p class="text-brown-800 mt-2 text-xs sm:text-sm">Fasilitas serbaguna yang fleksibel untuk kebutuhan rombongan Anda.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <!-- Package 1 -->
-                <div class="bg-white rounded-2xl p-6 border border-cream-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                    <div class="w-12 h-12 rounded-xl bg-forest-50 text-forest-700 flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-house-chimney-window"></i>
-                    </div>
-                    <h3 class="font-serif text-lg font-bold text-brown-900 mb-2">Family Gathering</h3>
-                    <p class="text-brown-800 text-xs leading-relaxed mb-4">
-                        Kamar keluarga luas, halaman rumput aman anak-anak, dan suasana santai di pinggir sungai.
-                    </p>
-                    <a href="#booking" class="text-forest-700 font-semibold text-xs inline-flex items-center hover:underline">
-                        Pesan Paket Keluarga <i class="fa-solid fa-chevron-right ml-1 text-[10px]"></i>
-                    </a>
-                </div>
-
-                <!-- Package 2 -->
-                <div class="bg-white rounded-2xl p-6 border border-cream-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                    <div class="w-12 h-12 rounded-xl bg-forest-50 text-forest-700 flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                    </div>
-                    <h3 class="font-serif text-lg font-bold text-brown-900 mb-2">Acara Sekolah & Makrab</h3>
-                    <p class="text-brown-800 text-xs leading-relaxed mb-4">
-                        Area lapangan outbound, ruang aula/kumpul, serta area camping ground aman untuk siswa.
-                    </p>
-                    <a href="#booking" class="text-forest-700 font-semibold text-xs inline-flex items-center hover:underline">
-                        Pesan Acara Sekolah <i class="fa-solid fa-chevron-right ml-1 text-[10px]"></i>
-                    </a>
-                </div>
-
-                <!-- Package 3 -->
-                <div class="bg-white rounded-2xl p-6 border border-cream-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                    <div class="w-12 h-12 rounded-xl bg-forest-50 text-forest-700 flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-briefcase"></i>
-                    </div>
-                    <h3 class="font-serif text-lg font-bold text-brown-900 mb-2">Corporate Gathering</h3>
-                    <p class="text-brown-800 text-xs leading-relaxed mb-4">
-                        Tempat ideal untuk Raker, team building perusahaan, serta healing kerja bagi staf.
-                    </p>
-                    <a href="#booking" class="text-forest-700 font-semibold text-xs inline-flex items-center hover:underline">
-                        Pesan Corporate Event <i class="fa-solid fa-chevron-right ml-1 text-[10px]"></i>
-                    </a>
-                </div>
-
-                <!-- Package 4 -->
-                <div class="bg-white rounded-2xl p-6 border border-cream-200 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                    <div class="w-12 h-12 rounded-xl bg-forest-50 text-forest-700 flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-fire-flame-curved"></i>
-                    </div>
-                    <h3 class="font-serif text-lg font-bold text-brown-900 mb-2">Camping & Barbecue</h3>
-                    <p class="text-brown-800 text-xs leading-relaxed mb-4">
-                        Fasilitas spot api unggun, persewaan perlengkapan camping, dan area panggangan BBQ.
-                    </p>
-                    <a href="#booking" class="text-forest-700 font-semibold text-xs inline-flex items-center hover:underline">
-                        Pesan Camping & BBQ <i class="fa-solid fa-chevron-right ml-1 text-[10px]"></i>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Photo Gallery Section -->
-    <section id="gallery" class="py-20 bg-cream-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
-                <div>
-                    <span class="text-forest-700 font-bold uppercase tracking-wider text-xs bg-forest-50 px-3 py-1 rounded-md border border-forest-200">Dokumentasi</span>
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brown-900 mt-2">Galeri Suasana Villa</h2>
-                </div>
-                <button onclick="openSettingsModal()" class="mt-4 md:mt-0 text-xs font-semibold text-forest-700 hover:text-forest-800 inline-flex items-center gap-1.5 bg-white px-4 py-2.5 rounded-xl border border-cream-200 shadow-sm">
-                    <i class="fa-solid fa-gear"></i> Ubah Foto di Setting
-                </button>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Gallery Item 1 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-cream-200 shadow-sm group">
-                    <div class="h-60 overflow-hidden">
-                        <img id="galleryImg1" src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80" alt="Tepi Sungai" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="p-4">
-                        <h4 class="font-bold text-brown-900 text-sm">Area Direct Riverside</h4>
-                        <p class="text-xs text-brown-800 mt-1">Akses santai menikmati aliran air sungai yang jernih.</p>
-                    </div>
-                </div>
-
-                <!-- Gallery Item 2 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-cream-200 shadow-sm group">
-                    <div class="h-60 overflow-hidden">
-                        <img id="galleryImg2" src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=800&q=80" alt="Outbound & Lapangan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="p-4">
-                        <h4 class="font-bold text-brown-900 text-sm">Lapangan Outdoor & Outbound</h4>
-                        <p class="text-xs text-brown-800 mt-1">Halaman rumput hijau untuk dinamika kelompok & games.</p>
-                    </div>
-                </div>
-
-                <!-- Gallery Item 3 -->
-                <div class="bg-white rounded-2xl overflow-hidden border border-cream-200 shadow-sm group sm:col-span-2 lg:col-span-1">
-                    <div class="h-60 overflow-hidden">
-                        <img id="galleryImg3" src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80" alt="Kamar Tidur" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="p-4">
-                        <h4 class="font-bold text-brown-900 text-sm">Fasilitas Kamar Tidur</h4>
-                        <p class="text-xs text-brown-800 mt-1">Ruangan bersih dan sejuk untuk istirahat rombongan.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog" class="py-20 bg-cream-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-14">
-                <span class="text-forest-700 font-bold uppercase tracking-wider text-xs bg-forest-50 px-3 py-1 rounded-md border border-forest-200">Blog & Artikel</span>
-                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-brown-900 mt-3">Inspirasi & Tips Wisata</h2>
-                <p class="text-brown-800 mt-2 text-xs sm:text-sm">Seputar perencanaan event luar ruangan dan liburan tepi sungai.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Article 1 -->
-                <article class="bg-white rounded-2xl overflow-hidden border border-cream-200 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Tips Family Gathering" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <span class="text-[10px] font-bold text-forest-700 uppercase bg-forest-50 px-2.5 py-1 rounded-md">Tips Acara</span>
-                            <h3 class="font-serif text-base font-bold text-brown-900 mt-3 mb-2 leading-snug">
-                                5 Hal Penting Saat Merencanakan Gathering Keluarga Besar di Villa
-                            </h3>
-                            <p class="text-brown-800 text-xs leading-relaxed">
-                                Memilih lokasi villa yang memiliki fasilitas lengkap serta ruang terbuka luas sangat berpengaruh pada keakraban seluruh keluarga...
-                            </p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 pt-0">
-                        <span class="text-[11px] text-gray-400 font-medium">Villanesia Blog • 2026</span>
-                    </div>
-                </article>
-
-                <!-- Article 2 -->
-                <article class="bg-white rounded-2xl overflow-hidden border border-cream-200 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1517457210348-703079e57d4b?auto=format&fit=crop&w=600&q=80" alt="Outbound Sekolah" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <span class="text-[10px] font-bold text-forest-700 uppercase bg-forest-50 px-2.5 py-1 rounded-md">Edukasi & Outbound</span>
-                            <h3 class="font-serif text-base font-bold text-brown-900 mt-3 mb-2 leading-snug">
-                                Manfaat Positif Kegiatan Outbound Tepi Sungai bagi Siswa Sekolah
-                            </h3>
-                            <p class="text-brown-800 text-xs leading-relaxed">
-                                Aktivitas di lingkungan alam membantu melatih kepemimpinan, keberanian, dan rasa kebersamaan di antara para siswa secara langsung...
-                            </p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 pt-0">
-                        <span class="text-[11px] text-gray-400 font-medium">Villanesia Blog • 2026</span>
-                    </div>
-                </article>
-
-                <!-- Article 3 -->
-                <article class="bg-white rounded-2xl overflow-hidden border border-cream-200 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=600&q=80" alt="Corporate Retreat" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <span class="text-[10px] font-bold text-forest-700 uppercase bg-forest-50 px-2.5 py-1 rounded-md">Corporate Event</span>
-                            <h3 class="font-serif text-base font-bold text-brown-900 mt-3 mb-2 leading-snug">
-                                Refreshing Kerja: Mengapa Suasana Alam Meningkatkan Produktivitas Tim
-                            </h3>
-                            <p class="text-brown-800 text-xs leading-relaxed">
-                                Suara alami gemericik sungai terbukti mampu menurunkan tingkat stres kerja dan merefresh ide-ide kreatif tim perusahaan...
-                            </p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 pt-0">
-                        <span class="text-[11px] text-gray-400 font-medium">Villanesia Blog • 2026</span>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Booking Form Section -->
-    <section id="booking" class="py-20 bg-cream-100 border-t border-cream-200">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-3xl p-8 sm:p-12 border border-cream-200 shadow-xl">
-                
-                <div class="text-center max-w-2xl mx-auto mb-10">
-                    <span class="text-forest-700 font-bold uppercase tracking-wider text-xs bg-forest-50 px-3 py-1 rounded-md border border-forest-200">Form Order Direct WA</span>
-                    <h2 class="font-serif text-3xl font-bold text-brown-900 mt-2">Formulir Tanya Sewa & Reservasi</h2>
-                    <p class="text-brown-800 text-xs sm:text-sm mt-2">Isi rincian acara Anda di bawah ini untuk terhubung langsung ke WhatsApp pengelola.</p>
-                </div>
-
-                <form id="enquiryForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-brown-900 mb-2">Nama Pemesan</label>
-                            <input type="text" id="formName" required placeholder="Nama Anda" class="w-full px-4 py-3 rounded-xl border border-cream-200 focus:outline-none focus:ring-2 focus:ring-forest-700 bg-cream-50 text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-brown-900 mb-2">Jenis Acara</label>
-                            <select id="formEventType" class="w-full px-4 py-3 rounded-xl border border-cream-200 focus:outline-none focus:ring-2 focus:ring-forest-700 bg-cream-50 text-sm">
-                                <option value="Family Gathering">Family Gathering / Keluarga</option>
-                                <option value="Acara Sekolah / Makrab">Acara Sekolah / Outbound / Makrab</option>
-                                <option value="Corporate Gathering">Corporate Event / Gathering Kantor</option>
-                                <option value="Retreat / Komunitas">Retreat / Komunitas</option>
-                                <option value="Camping & BBQ">Camping & Barbecue</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-brown-900 mb-2">Perkiraan Tanggal</label>
-                            <input type="date" id="formDate" required class="w-full px-4 py-3 rounded-xl border border-cream-200 focus:outline-none focus:ring-2 focus:ring-forest-700 bg-cream-50 text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold uppercase tracking-wider text-brown-900 mb-2">Jumlah Peserta (Orang)</label>
-                            <input type="number" id="formGuests" placeholder="Contoh: 30" min="1" required class="w-full px-4 py-3 rounded-xl border border-cream-200 focus:outline-none focus:ring-2 focus:ring-forest-700 bg-cream-50 text-sm">
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-brown-900 mb-2">Pesan & Catatan Tambahan</label>
-                        <textarea id="formMessage" rows="3" placeholder="Tanyakan seputar katering, kamar tidur, atau fasilitas khusus..." class="w-full px-4 py-3 rounded-xl border border-cream-200 focus:outline-none focus:ring-2 focus:ring-forest-700 bg-cream-50 text-sm"></textarea>
-                    </div>
-
-                    <button type="submit" class="w-full py-4 rounded-xl bg-forest-700 hover:bg-forest-800 text-white font-bold text-base shadow-lg transition-all duration-200 flex items-center justify-center space-x-2">
-                        <i class="fa-brands fa-whatsapp text-2xl"></i>
-                        <span>Kirim Pesan Sewa Direct WhatsApp</span>
-                    </button>
-                </form>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer class="bg-brown-900 text-cream-100 border-t border-white/10 pt-16 pb-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 pb-12 border-b border-white/10">
-                
-                <div>
-                    <span class="font-serif text-2xl font-bold tracking-tight text-white">Villanesia</span>
-                    <span class="block text-xs uppercase tracking-widest text-amber-400 font-bold -mt-1 mb-4">Riverside</span>
-                    <p class="text-cream-200 text-xs leading-relaxed max-w-sm">
-                        Villa sewa tempat liburan & event outdoor tepi sungai terpadu untuk acara sekolah, keluarga, dan perusahaan.
-                    </p>
-                </div>
-
-                <div>
-                    <h4 class="font-serif text-base font-bold text-white mb-4">Pengelola Marketing Resmi</h4>
-                    <div class="space-y-3 text-xs text-cream-200">
-                        <p class="flex items-center space-x-2">
-                            <i class="fa-solid fa-user-tie text-amber-400 w-4"></i>
-                            <span id="displayFooterName">Ivan Nolan</span>
-                        </p>
-                        <p class="flex items-center space-x-2">
-                            <i class="fa-brands fa-whatsapp text-amber-400 w-4"></i>
-                            <span id="displayFooterWa">+62 822-1155-9404</span>
-                        </p>
-                        <p class="flex items-center space-x-2">
-                            <i class="fa-solid fa-envelope text-amber-400 w-4"></i>
-                            <span id="displayFooterEmail">info@villanesia.com</span>
-                        </p>
-                    </div>
-                </div>
-
-                <div>
-                    <h4 class="font-serif text-base font-bold text-white mb-4">Akses Cepat & Lokasi</h4>
-                    <div class="flex flex-col gap-2">
-                        <a href="https://maps.app.goo.gl/ySFqTtAbkvroezxZ6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center text-xs bg-white/10 hover:bg-white/20 px-3 py-2.5 rounded-lg transition-colors text-amber-300 w-fit">
-                            <i class="fa-solid fa-map-location-dot mr-2 text-sm"></i> Petunjuk Arah Google Maps Direct
-                        </a>
-                        <button onclick="openSettingsModal()" class="inline-flex items-center text-xs bg-forest-700 hover:bg-forest-800 text-white px-3 py-2.5 rounded-lg transition-colors w-fit mt-2">
-                            <i class="fa-solid fa-gear mr-2"></i> Pengaturan Konten & Status
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-cream-200 gap-4">
-                <p>&copy; 2026 Villanesia Riverside. All Rights Reserved.</p>
-                <div class="flex items-center space-x-2">
-                    <span id="footerStatusDot" class="inline-block w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse"></span>
-                    <span id="footerStatusText" class="font-semibold text-amber-300">Status: COMING SOON</span>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Floating Direct WhatsApp Button -->
-    <a id="floatingWaBtn" href="#" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-green-600 hover:bg-green-700 text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 group">
-        <i class="fa-brands fa-whatsapp text-3xl"></i>
-        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-500 ease-in-out text-xs font-bold pl-0 group-hover:pl-2">
-            Chat Direct WA
-        </span>
-    </a>
-
-    <!-- Settings Modal -->
-    <div id="settingsModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm hidden px-4">
-        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-cream-200 transform transition-all max-h-[90vh] overflow-y-auto">
-            
-            <div class="flex justify-between items-center border-b border-cream-200 pb-3 mb-4">
-                <h3 class="font-serif text-lg font-bold text-brown-900">
-                    <i class="fa-solid fa-sliders text-forest-700 mr-2"></i> Pengaturan Web & Kontak
-                </h3>
-                <button onclick="closeSettingsModal()" class="text-gray-400 hover:text-gray-600 p-1">
-                    <i class="fa-solid fa-xmark text-xl"></i>
-                </button>
-            </div>
-
-            <div class="space-y-5">
-                
-                <!-- Status Villa Toggle Dropdown -->
-                <div class="bg-amber-50 p-4 rounded-xl border border-amber-200 space-y-2">
-                    <label class="block text-xs font-bold uppercase tracking-wider text-amber-900">Status Operasional Villa</label>
-                    <select id="settingStatusSelect" class="w-full px-3 py-2 rounded-lg border border-amber-300 text-xs font-semibold focus:ring-2 focus:ring-forest-700 focus:outline-none bg-white">
-                        <option value="coming_soon">Coming Soon (Dalam Persiapan)</option>
-                        <option value="ready">Sudah Buka / Ready (Bisa Disewa)</option>
-                    </select>
-                    <p class="text-[11px] text-amber-800">Jika diset "Sudah Buka", badge "Coming Soon" di header & hero akan disembunyikan otomatis.</p>
-                </div>
-
-                <!-- Kontak Marketing Settings -->
-                <div class="bg-cream-50 p-4 rounded-xl border border-cream-200 space-y-3">
-                    <h4 class="font-bold text-xs uppercase tracking-wider text-forest-700 flex items-center gap-1.5">
-                        <i class="fa-solid fa-address-book"></i> Informasi Kontak Marketing
-                    </h4>
-                    <div>
-                        <label class="block text-xs font-medium text-brown-900 mb-1">Nama Marketing</label>
-                        <input type="text" id="settingNameInput" class="w-full px-3 py-2 rounded-lg border border-cream-200 text-xs focus:ring-2 focus:ring-forest-700 focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-medium text-brown-900 mb-1">Nomor WhatsApp (+62...)</label>
-                        <input type="text" id="settingWaInput" placeholder="+62 822-1155-9404" class="w-full px-3 py-2 rounded-lg border border-cream-200 text-xs focus:ring-2 focus:ring-forest-700 focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-medium text-brown-900 mb-1">Email Pengelola</label>
-                        <input type="email" id="settingEmailInput" class="w-full px-3 py-2 rounded-lg border border-cream-200 text-xs focus:ring-2 focus:ring-forest-700 focus:outline-none">
-                    </div>
-                </div>
-
-                <!-- Gambar Settings -->
-                <div class="bg-cream-50 p-4 rounded-xl border border-cream-200 space-y-3">
-                    <h4 class="font-bold text-xs uppercase tracking-wider text-forest-700 flex items-center gap-1.5">
-                        <i class="fa-solid fa-image"></i> Ganti URL Foto
-                    </h4>
-                    <div>
-                        <label class="block text-xs font-medium text-brown-900 mb-1">URL Foto Background Hero</label>
-                        <input type="url" id="settingHeroBgInput" class="w-full px-3 py-2 rounded-lg border border-cream-200 text-xs focus:ring-2 focus:ring-forest-700 focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-medium text-brown-900 mb-1">URL Foto Section "Tentang Kami"</label>
-                        <input type="url" id="settingAboutImgInput" class="w-full px-3 py-2 rounded-lg border border-cream-200 text-xs focus:ring-2 focus:ring-forest-700 focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-medium text-brown-900 mb-1">URL Foto Galeri 1</label>
-                        <input type="url" id="settingGal1Input" class="w-full px-3 py-2 rounded-lg border border-cream-200 text-xs focus:ring-2 focus:ring-forest-700 focus:outline-none">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-medium text-brown-900 mb-1">URL Foto Galeri 2</label>
-                        <input type="url" id="settingGal2Input" class="w-full px-3 py-2 rounded-lg border border-cream-200 text-xs focus:ring-2 focus:ring-forest-700 focus:outline-none">
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="mt-6 flex justify-end space-x-3 border-t border-cream-200 pt-4">
-                <button onclick="closeSettingsModal()" class="px-4 py-2 rounded-lg border border-cream-200 text-xs font-semibold text-gray-600 hover:bg-cream-100">Batal</button>
-                <button onclick="saveSettings()" class="px-5 py-2 rounded-lg bg-forest-700 hover:bg-forest-800 text-white text-xs font-semibold shadow">Simpan & Terapkan</button>
-            </div>
-
-        </div>
+      <ul class="drawer-links">
+        <li><a href="#about" onclick="toggleDrawer()">Tentang Villa</a></li>
+        <li><a href="#suitability" onclick="toggleDrawer()">Kegiatan & Acara</a></li>
+        <li><a href="#gallery" onclick="toggleDrawer()">Galeri Foto</a></li>
+        <li><a href="#location" onclick="toggleDrawer()">Lokasi Google Maps</a></li>
+      </ul>
     </div>
 
-    <!-- Application JavaScript -->
-    <script>
-        // Default Configuration
-        const defaultConfig = {
-            status: "coming_soon", // "coming_soon" or "ready"
-            name: "Ivan Nolan",
-            wa: "+62 822-1155-9404",
-            email: "info@villanesia.com",
-            heroBg: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1920&q=80",
-            aboutImg: "https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=1000&q=80",
-            gal1: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80",
-            gal2: "https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=800&q=80"
-        };
+    <div class="drawer-footer">
+      <button class="btn-primary" style="width:100%; justify-content:center;" onclick="directWA('Halo Ivan, saya ingin tanya sewa Villanesia Riverside.')">
+        <i class="fa-brands fa-whatsapp"></i> Chat WhatsApp
+      </button>
+      
+      <!-- Tombol Admin Setting di Drawer -->
+      <button class="btn-outline admin-only" style="width:100%; justify-content:center; color:var(--cokelat-tua); border-color:var(--cokelat-tua);" onclick="toggleDrawer(); openModal();">
+        <i class="fa-solid fa-gear"></i> Pengaturan Web
+      </button>
+    </div>
+  </div>
 
-        let currentConfig = { ...defaultConfig };
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div id="badgeContainer">
+        <span class="badge-status" id="villaBadge"><i class="fa-solid fa-clock"></i> COMING SOON</span>
+      </div>
+      <h1>Keindahan Alam Tepi Sungai Yang Sempurna</h1>
+      <p>Persewaan villa eksklusif bernuansa asri dan tenang. Tempat ideal untuk mengukir kenangan bersama keluarga besar, retret sekolah, gathering instansi, maupun acara komunitas.</p>
+      
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="directWA('Halo Ivan, saya ingin reservasi/info harga Villanesia Riverside.')">
+          <i class="fa-brands fa-whatsapp"></i> Reservasi WhatsApp
+        </button>
+        <button class="btn-outline" onclick="directMaps()">
+          <i class="fa-solid fa-location-dot"></i> Petunjuk Google Maps
+        </button>
+      </div>
+    </div>
+  </section>
 
-        // Clean WhatsApp number to pure digits with country code (e.g. 6282211559404)
-        function getCleanWaNumber(rawNumber) {
-            if (!rawNumber) return "6282211559404";
-            let cleaned = rawNumber.replace(/\D/g, '');
-            if (cleaned.startsWith('0')) {
-                cleaned = '62' + cleaned.substring(1);
-            }
-            return cleaned;
-        }
+  <!-- Section About -->
+  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>Suasana Asri & Privat</h2>
+        <p>Rasukan ketenangan menginap dengan pemandangan alam sungai alami.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <h3><i class="fa-solid fa-users" style="color:var(--hijau-forest)"></i> Acara Keluarga</h3>
+          <p>Cocok untuk reuni, arisan, dan liburan privat keluarga besar.</p>
+        </div>
+        <div class="card">
+          <h3><i class="fa-solid fa-graduation-cap" style="color:var(--hijau-forest)"></i> Acara Sekolah</h3>
+          <p>Area lapang aman untuk makrab, camping, dan perpisahan sekolah.</p>
+        </div>
+        <div class="card">
+          <h3><i class="fa-solid fa-briefcase" style="color:var(--hijau-forest)"></i> Gathering Instansi</h3>
+          <p>Fasilitas lengkap untuk acara rapat kerja dan outbound kantor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // Initialize application on DOM load
-        window.addEventListener('DOMContentLoaded', () => {
-            loadConfig();
-            renderUI();
-        });
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Villanesia Riverside. All Rights Reserved.</p>
+      <p style="font-size:0.85rem; opacity:0.7; margin-top:5px;">Marketing: <span id="footerMarketingName">Ivan Nolan</span> (+62 822-1155-9404)</p>
+      
+      <!-- Option Admin Setting di Footer -->
+      <div class="admin-only" style="justify-content: center; margin-top: 15px;">
+        <button onclick="openModal()" style="background:none; border:none; color:var(--gold); cursor:pointer; font-size:0.85rem; text-decoration:underline;">
+          <i class="fa-solid fa-gear"></i> Menu Admin / Setting
+        </button>
+      </div>
+    </div>
+  </footer>
 
-        // Load Saved Config from localStorage
-        function loadConfig() {
-            const saved = localStorage.getItem('villanesia_config');
-            if (saved) {
-                try {
-                    currentConfig = { ...defaultConfig, ...JSON.parse(saved) };
-                } catch(e) {
-                    currentConfig = { ...defaultConfig };
-                }
-            }
-        }
+  <!-- Floating WhatsApp -->
+  <a class="floating-wa" onclick="directWA('Halo Ivan, saya ingin bertanya tentang Villanesia Riverside.')">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
-        // Render UI Elements based on configuration
-        function renderUI() {
-            const cleanDigits = getCleanWaNumber(currentConfig.wa);
-            const defaultMessage = encodeURIComponent(`Halo ${currentConfig.name}, saya bermaksud menanyakan info sewa & reservasi di Villanesia Riverside.`);
-            
-            // Format Direct WA URL
-            const directWaLink = `https://wa.me/${cleanDigits}?text=${defaultMessage}`;
+  <!-- Modal Settings Dynamic -->
+  <div class="modal-overlay" id="settingModal">
+    <div class="modal-card">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+        <h3 style="color:var(--cokelat-tua);"><i class="fa-solid fa-sliders"></i> Pengaturan Web Admin</h3>
+        <button onclick="closeModal()" style="background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
+      </div>
 
-            // Update All WA Buttons Links
-            document.getElementById('navWaBtn').href = directWaLink;
-            document.getElementById('mobileWaBtn').href = directWaLink;
-            document.getElementById('heroWaBtn').href = directWaLink;
-            document.getElementById('floatingWaBtn').href = directWaLink;
+      <div class="input-group">
+        <label>Status Villa</label>
+        <select id="cfgStatus">
+          <option value="COMING_SOON">Coming Soon</option>
+          <option value="READY">Sudah Buka / Ready</option>
+        </select>
+      </div>
 
-            // Update Marketing Information Text
-            document.getElementById('aboutMarketingName').innerText = currentConfig.name;
-            document.getElementById('displayFooterName').innerText = currentConfig.name;
-            document.getElementById('displayFooterWa').innerText = currentConfig.wa;
-            document.getElementById('displayFooterEmail').innerText = currentConfig.email;
+      <div class="input-group">
+        <label>Nama Marketing</label>
+        <input type="text" id="cfgName" value="Ivan Nolan">
+      </div>
 
-            // Handle Villa Status (Coming Soon vs Ready)
-            const isComingSoon = currentConfig.status === 'coming_soon';
-            
-            const headerBadge = document.getElementById('headerStatusBadge');
-            const heroBadge = document.getElementById('heroStatusBadge');
-            const heroBtnText = document.getElementById('heroBtnText');
-            const footerStatusDot = document.getElementById('footerStatusDot');
-            const footerStatusText = document.getElementById('footerStatusText');
+      <div class="input-group">
+        <label>Nomor WhatsApp (+62...)</label>
+        <input type="text" id="cfgPhone" value="+62 822-1155-9404">
+      </div>
 
-            if (isComingSoon) {
-                headerBadge.classList.remove('hidden');
-                heroBadge.classList.remove('hidden');
-                heroBtnText.innerText = "Tanya Sewa via WhatsApp";
-                footerStatusDot.className = "inline-block w-2.5 h-2.5 rounded-full bg-amber-400 animate-pulse";
-                footerStatusText.innerText = "Status: COMING SOON";
-                footerStatusText.className = "font-semibold text-amber-300";
-            } else {
-                headerBadge.classList.add('hidden');
-                heroBadge.classList.add('hidden');
-                heroBtnText.innerText = "Pesan Sekarang via WhatsApp";
-                footerStatusDot.className = "inline-block w-2.5 h-2.5 rounded-full bg-emerald-400";
-                footerStatusText.innerText = "Status: SUDAH BUKA / READY";
-                footerStatusText.className = "font-semibold text-emerald-300";
-            }
+      <div class="input-group">
+        <label>Email Kontak</label>
+        <input type="email" id="cfgEmail" value="info@villanesia.com">
+      </div>
 
-            // Update Dynamic Photos
-            if (currentConfig.heroBg) document.getElementById('heroBgImg').src = currentConfig.heroBg;
-            if (currentConfig.aboutImg) document.getElementById('aboutImg').src = currentConfig.aboutImg;
-            if (currentConfig.gal1) document.getElementById('galleryImg1').src = currentConfig.gal1;
-            if (currentConfig.gal2) document.getElementById('galleryImg2').src = currentConfig.gal2;
+      <button class="btn-primary" style="width:100%; justify-content:center; margin-bottom: 10px;" onclick="saveSettings()">
+        <i class="fa-solid fa-floppy-disk"></i> Simpan Perubahan
+      </button>
 
-            // Populate Modal Settings Inputs
-            document.getElementById('settingStatusSelect').value = currentConfig.status;
-            document.getElementById('settingNameInput').value = currentConfig.name;
-            document.getElementById('settingWaInput').value = currentConfig.wa;
-            document.getElementById('settingEmailInput').value = currentConfig.email;
-            document.getElementById('settingHeroBgInput').value = currentConfig.heroBg;
-            document.getElementById('settingAboutImgInput').value = currentConfig.aboutImg;
-            document.getElementById('settingGal1Input').value = currentConfig.gal1;
-            document.getElementById('settingGal2Input').value = currentConfig.gal2;
-        }
+      <!-- Button Khusus Generator Link Client -->
+      <button class="btn-outline" style="width:100%; justify-content:center; color:var(--cokelat-tua); border-color:var(--cokelat-tua);" onclick="copyClientLink()">
+        <i class="fa-solid fa-link"></i> Salin Link Khusus Klien (Tanpa Setting)
+      </button>
+    </div>
+  </div>
 
-        // Modal Controls
-        function openSettingsModal() {
-            document.getElementById('settingsModal').classList.remove('hidden');
-        }
+  <script>
+    const MAPS_URL = "https://maps.app.goo.gl/ySFqTtAbkvroezxZ6";
+    let appConfig = {
+      status: "COMING_SOON",
+      name: "Ivan Nolan",
+      phone: "+62 822-1155-9404",
+      email: "info@villanesia.com"
+    };
 
-        function closeSettingsModal() {
-            document.getElementById('settingsModal').classList.add('hidden');
-        }
+    // Deteksi Parameter Client Mode
+    function checkClientMode() {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('mode') === 'client') {
+        document.body.classList.add('client-mode');
+      }
+    }
 
-        // Save Settings to localStorage
-        function saveSettings() {
-            currentConfig.status = document.getElementById('settingStatusSelect').value;
-            currentConfig.name = document.getElementById('settingNameInput').value.trim() || defaultConfig.name;
-            currentConfig.wa = document.getElementById('settingWaInput').value.trim() || defaultConfig.wa;
-            currentConfig.email = document.getElementById('settingEmailInput').value.trim() || defaultConfig.email;
-            
-            currentConfig.heroBg = document.getElementById('settingHeroBgInput').value.trim() || defaultConfig.heroBg;
-            currentConfig.aboutImg = document.getElementById('settingAboutImgInput').value.trim() || defaultConfig.aboutImg;
-            currentConfig.gal1 = document.getElementById('settingGal1Input').value.trim() || defaultConfig.gal1;
-            currentConfig.gal2 = document.getElementById('settingGal2Input').value.trim() || defaultConfig.gal2;
+    // Direct WA System
+    function directWA(message) {
+      const cleanPhone = appConfig.phone.replace(/[^0-9]/g, '');
+      const encodedMsg = encodeURIComponent(message);
+      const waUrl = `https://api.whatsapp.com/send?phone=${cleanPhone}&text=${encodedMsg}`;
 
-            localStorage.setItem('villanesia_config', JSON.stringify(currentConfig));
-            renderUI();
-            closeSettingsModal();
-        }
+      try {
+        const win = window.open(waUrl, '_blank');
+        if (!win || win.closed) window.top.location.href = waUrl;
+      } catch (e) {
+        window.top.location.href = waUrl;
+      }
+    }
 
-        // Mobile Burger Menu Toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            const icon = document.getElementById('burgerIcon');
-            
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-xmark');
-            } else {
-                menu.classList.add('hidden');
-                icon.classList.remove('fa-xmark');
-                icon.classList.add('fa-bars');
-            }
-        }
+    // Direct Maps System
+    function directMaps() {
+      try {
+        const win = window.open(MAPS_URL, '_blank');
+        if (!win || win.closed) window.top.location.href = MAPS_URL;
+      } catch (e) {
+        window.top.location.href = MAPS_URL;
+      }
+    }
 
-        // Booking Form Auto WhatsApp Message Generation
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            
-            const name = document.getElementById('formName').value.trim();
-            const eventType = document.getElementById('formEventType').value;
-            const date = document.getElementById('formDate').value;
-            const guests = document.getElementById('formGuests').value;
-            const message = document.getElementById('formMessage').value.trim();
+    function toggleDrawer() {
+      document.getElementById('navDrawer').classList.toggle('active');
+      document.getElementById('drawerBackdrop').classList.toggle('active');
+    }
 
-            const cleanDigits = getCleanWaNumber(currentConfig.wa);
+    function openModal() {
+      document.getElementById('cfgStatus').value = appConfig.status;
+      document.getElementById('cfgName').value = appConfig.name;
+      document.getElementById('cfgPhone').value = appConfig.phone;
+      document.getElementById('cfgEmail').value = appConfig.email;
+      document.getElementById('settingModal').classList.add('active');
+    }
 
-            const formattedText = `Halo ${currentConfig.name}, saya mau menanyakan ketersediaan sewa di *Villanesia Riverside*:%0A%0A` +
-                `• *Nama Pemesan*: ${name}%0A` +
-                `• *Jenis Acara*: ${eventType}%0A` +
-                `• *Perkiraan Tanggal*: ${date}%0A` +
-                `• *Jumlah Peserta*: ${guests} orang%0A` +
-                `• *Catatan*: ${message ? message : '-'}`;
+    function closeModal() {
+      document.getElementById('settingModal').classList.remove('active');
+    }
 
-            const directWaUrl = `https://wa.me/${cleanDigits}?text=${formattedText}`;
-            window.open(directWaUrl, '_blank', 'noopener,noreferrer');
-        }
-    </script>
+    function saveSettings() {
+      appConfig.status = document.getElementById('cfgStatus').value;
+      appConfig.name = document.getElementById('cfgName').value;
+      appConfig.phone = document.getElementById('cfgPhone').value;
+      appConfig.email = document.getElementById('cfgEmail').value;
+
+      localStorage.setItem('villanesia_cfg', JSON.stringify(appConfig));
+      renderUI();
+      closeModal();
+      alert('Pengaturan berhasil disimpan!');
+    }
+
+    function copyClientLink() {
+      const clientUrl = window.location.origin + window.location.pathname + '?mode=client';
+      navigator.clipboard.writeText(clientUrl).then(() => {
+        alert('Link Khusus Klien berhasil disalin!\n\nURL: ' + clientUrl + '\n\n(Link ini tidak akan menampilkan menu Pengaturan Web/Admin).');
+      });
+    }
+
+    function renderUI() {
+      const saved = localStorage.getItem('villanesia_cfg');
+      if (saved) {
+        try { appConfig = { ...appConfig, ...JSON.parse(saved) }; } catch(e){}
+      }
+
+      document.getElementById('footerMarketingName').innerText = appConfig.name;
+      const badgeContainer = document.getElementById('badgeContainer');
+
+      if (appConfig.status === 'COMING_SOON') {
+        badgeContainer.innerHTML = `<span class="badge-status"><i class="fa-solid fa-clock"></i> COMING SOON - SEGERA HADIR</span>`;
+      } else {
+        badgeContainer.innerHTML = `<span class="badge-status" style="background:rgba(45,106,79,0.3); border-color:#52B788;"><i class="fa-solid fa-circle-check"></i> SUDAH BUKA / READY BOOKING</span>`;
+      }
+    }
+
+    window.onload = function() {
+      checkClientMode();
+      renderUI();
+    };
+  </script>
 </body>
 </html>
-```
