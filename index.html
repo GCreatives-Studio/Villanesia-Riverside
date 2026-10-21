@@ -954,11 +954,12 @@
     };
 
     // ==========================================
-    // AUDIO AMBIENCE (SUARA RIVER & FOREST)
+    // AUDIO AMBIENCE (SUARA RIVERSIDE & BURUNG)
     // ==========================================
     let audioCtx = null;
     let isAudioPlaying = false;
     let noiseNode = null;
+    let chirpInterval = null;
 
     function toggleAudio() {
       if (!audioCtx) {
@@ -986,7 +987,7 @@
     }
 
     function startForestAmbience() {
-      // Menghasilkan deru air sungai jernih
+      // 1. Deru Sungai Alami (Pink Noise)
       const bufferSize = audioCtx.sampleRate * 2;
       const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
       const data = buffer.getChannelData(0);
@@ -1001,7 +1002,7 @@
         b4 = 0.55000 * b4 + white * 0.5329522;
         b5 = -0.7616 * b5 - white * 0.0168980;
         data[i] = b0 + b1 + b2 + b3 + b4 + b5 + b6 + white * 0.5362;
-        data[i] *= 0.035; // Suara air sungai yang lembut
+        data[i] *= 0.04; 
         b6 = white * 0.115926;
       }
 
@@ -1011,7 +1012,7 @@
 
       const filter = audioCtx.createBiquadFilter();
       filter.type = 'lowpass';
-      filter.frequency.value = 500;
+      filter.frequency.value = 600;
 
       const gainNode = audioCtx.createGain();
       gainNode.gain.value = 0.3;
@@ -1020,6 +1021,38 @@
       filter.connect(gainNode);
       gainNode.connect(audioCtx.destination);
       noiseNode.start();
+
+      // 2. Efek Suara Kicauan Burung Hutan Alami Berkala
+      chirpInterval = setInterval(() => {
+        if (!isAudioPlaying || !audioCtx) return;
+        playBirdChirp();
+      }, 4000);
+    }
+
+    // Generator Nada Kicauan Burung Sintesis
+    function playBirdChirp() {
+      try {
+        const now = audioCtx.currentTime;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+
+        osc.type = 'sine';
+        // Frekuensi tinggi khas burung berkicau
+        const startFreq = 2200 + Math.random() * 1200;
+        osc.frequency.setValueAtTime(startFreq, now);
+        osc.frequency.exponentialRampToValueAtTime(startFreq + 800, now + 0.08);
+        osc.frequency.exponentialRampToValueAtTime(startFreq - 400, now + 0.18);
+
+        gain.gain.setValueAtTime(0.01, now);
+        gain.gain.linearRampToValueAtTime(0.08, now + 0.05);
+        gain.gain.linearRampToValueAtTime(0.001, now + 0.2);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start(now);
+        osc.stop(now + 0.22);
+      } catch(e) {}
     }
 
     function stopForestAmbience() {
@@ -1028,10 +1061,14 @@
         noiseNode.disconnect();
         noiseNode = null;
       }
+      if (chirpInterval) {
+        clearInterval(chirpInterval);
+        chirpInterval = null;
+      }
     }
 
     // ==========================================
-    // INTEGRASI SISTEM & DINAMIS MARKETING
+    // SISTEM PENGATURAN & NAMA MARKETING DINAMIS
     // ==========================================
     function checkClientMode() {
       const urlParams = new URLSearchParams(window.location.search);
@@ -1040,7 +1077,6 @@
       }
     }
 
-    // Direct WA dengan Nama Marketing Dinamis
     function directWA(customMessage) {
       const cleanPhone = appConfig.phone.replace(/[^0-9]/g, '');
       const fullText = `Halo ${appConfig.name}, ` + customMessage.replace(/^Halo,\s*/i, '');
@@ -1165,7 +1201,7 @@
       localStorage.setItem('villanesia_cfg', JSON.stringify(appConfig));
       renderUI();
       closeModal();
-      alert(`Pengaturan disukai!\nNama marketing diset ke: ${appConfig.name}`);
+      alert(`Pengaturan disimpan!\nNama marketing diset ke: ${appConfig.name}`);
     }
 
     function copyClientLink() {
@@ -1228,4 +1264,4 @@
     };
   </script>
 </body>
-        </html>
+</html>
